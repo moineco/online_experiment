@@ -1,9 +1,30 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Experiments with oTree and Python",
+    "section": "",
+    "text": "oTree is an open-source and online software for implementing interactive experiments in the laboratory, online, the field or combinations thereof. The basic experimental setup in oTree consists of (i) an experiment written within oTree, (ii) a server computer, which can be a cloud server or a local laptop and (iii) subjects’ devices with a web browser. oTree creates an experimental session on the server, as well as links for all the participants and the experimenter.\noTree is a framework based on Python that lets you build:\n\nMultiplayer strategy games, like the prisoner’s dilemma, public goods game, and auctions\nControlled behavioral experiments in economics, psychology, and related fields\nSurveys and quizzes"
+  },
+  {
     "objectID": "chapter_1.html",
     "href": "chapter_1.html",
-    "title": "1  Chapter 1",
+    "title": "1  Operationalize oTree",
     "section": "",
-    "text": "To create an application named game_app move to the oTree folder\n\n\ncd oTree\n\n\nCreate the application\n\n\notree startapp game_app\n\n\nMove to the folder game_app\nIn this folder, you will find the following files as default\n\n\nmodels.py\npages.py\ntests.py\n\n\nIn this folder, you will also find a subfolder\n\n\ntemplates/game_app\n\nMypage.html\nResults.html\n\n\n\n\n\n\nA model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python class\n\nSubsession\nGroup\nPlayer\n\n\nclass Subsession(BaseSubsession):\n\npass\n\nclass Group(BaseGroup):\n\npass\n\nclass Player(BasePlayer):\n\npass\n\n\n\n\n\n\nPages that the participants see are defined in pages.py\nLogic for how to display the HTML templates\nwhen, how, and what to display\npage_sequence gives the order of pages\nIf there are multiple rounds the sequence is repeated\n\nFor instance,\n\nclass MyPage(Page):\npass\nclass ResultsWaitPage(WaitPage):\ndef after_all_players_arrive(self):\npass\nclass Results(Page):\npass\n\n\npage_sequence = [MyPage, ResultsWaitPage, Results]"
+    "text": "To create an application named game_app move to the oTree folder\n\n\ncd oTree\n\n\nCreate the application\n\n\notree startapp game_app\n\n\nMove to the folder game_app\nIn this folder, you will find the following files as default\n\n\nmodels.py\npages.py\ntests.py\n\n\nIn this folder, you will also find a subfolder\n\n\ntemplates/game_app\n\nMypage.html\nResults.html"
+  },
+  {
+    "objectID": "chapter_1.html#models.py",
+    "href": "chapter_1.html#models.py",
+    "title": "1  Operationalize oTree",
+    "section": "1.2 Models.py",
+    "text": "1.2 Models.py\nA model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python class\n\nSubsession\nGroup\nPlayer\n\n\nclass Subsession(BaseSubsession):\n\npass\n\nclass Group(BaseGroup):\n\npass\n\nclass Player(BasePlayer):\n\npass"
+  },
+  {
+    "objectID": "chapter_1.html#pages.py",
+    "href": "chapter_1.html#pages.py",
+    "title": "1  Operationalize oTree",
+    "section": "1.3 Pages.py",
+    "text": "1.3 Pages.py\n\nPages that the participants see are defined in pages.py\nLogic for how to display the HTML templates\nwhen, how, and what to display\npage_sequence gives the order of pages\nIf there are multiple rounds the sequence is repeated\n\nFor instance,\n\nclass MyPage(Page):\npass\nclass ResultsWaitPage(WaitPage):\ndef after_all_players_arrive(self):\npass\nclass Results(Page):\npass\n\n\npage_sequence = [MyPage, ResultsWaitPage, Results]"
   }
 ]

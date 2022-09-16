@@ -1,10 +1,8 @@
-# Chapter 1
+# Operationalize oTree
 
-## Operationalize oTree to deploy IGG
+## App
 
-### App
-
-#### My first application {.unnumbered}
+### game_app
 
 1.  To create an application named **game_app** move to the oTree folder
 
@@ -32,7 +30,7 @@
 
     -   Results.html
 
-### Models.py
+## Models.py
 
 A model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python **class**
 
@@ -54,7 +52,7 @@ A model is basically a database. Here we define the structure of the data. For i
 
     -   pass
 
-### Pages.py
+## Pages.py
 
 -   Pages that the participants see are defined in pages.py
 

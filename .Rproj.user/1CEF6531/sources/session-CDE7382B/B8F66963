@@ -3,7 +3,7 @@
     "path": "~/Dropbox/git_working_directory_3/git_book_oTree/chapter_1.qmd",
     "project_path": "chapter_1.qmd",
     "type": "quarto_markdown",
-    "hash": "4101797785",
+    "hash": "183113692",
     "contents": "",
     "dirty": false,
     "created": 1663368478208.0,
@@ -16,16 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "0,11",
+        "cursorPosition": "4,12",
         "scrollLine": "0",
         "rmdVisualModeLocation": "11:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1663368498,
+    "lastKnownWriteTime": 1663369279,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1663368498274,
+    "last_content_update": 1663369279270,
     "read_only": false,
     "read_only_alternatives": []
 }
