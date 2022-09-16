@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "chapter_1.html",
+    "href": "chapter_1.html",
+    "title": "1  Chapter 1",
+    "section": "",
+    "text": "To create an application named game_app move to the oTree folder\n\n\ncd oTree\n\n\nCreate the application\n\n\notree startapp game_app\n\n\nMove to the folder game_app\nIn this folder, you will find the following files as default\n\n\nmodels.py\npages.py\ntests.py\n\n\nIn this folder, you will also find a subfolder\n\n\ntemplates/game_app\n\nMypage.html\nResults.html\n\n\n\n\n\n\nA model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python class\n\nSubsession\nGroup\nPlayer\n\n\nclass Subsession(BaseSubsession):\n\npass\n\nclass Group(BaseGroup):\n\npass\n\nclass Player(BasePlayer):\n\npass\n\n\n\n\n\n\nPages that the participants see are defined in pages.py\nLogic for how to display the HTML templates\nwhen, how, and what to display\npage_sequence gives the order of pages\nIf there are multiple rounds the sequence is repeated\n\nFor instance,\n\nclass MyPage(Page):\npass\nclass ResultsWaitPage(WaitPage):\ndef after_all_players_arrive(self):\npass\nclass Results(Page):\npass\n\n\npage_sequence = [MyPage, ResultsWaitPage, Results]"
+  }
+]
