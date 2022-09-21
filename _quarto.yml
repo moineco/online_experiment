@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Experiments with oTree and Python"
+  title: "Behavorial Experiments with oTree and Python"
   author: "Moinul Islam"
   date: "9/15/2022"
   chapters:

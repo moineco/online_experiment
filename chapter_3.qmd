@@ -1,8 +1,6 @@
-# Operationalize oTree
+# App in oTree
 
 ## App
-
-### game_app
 
 1.  To create an application named **game_app** move to the oTree folder
 
