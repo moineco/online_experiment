@@ -91,6 +91,13 @@
     "text": "oTree Studio is a point-and-click interface for building oTree apps. It is free to use for small/medium sized projects."
   },
   {
+    "objectID": "chapter_4.html#create-project-by-otree-hub",
+    "href": "chapter_4.html#create-project-by-otree-hub",
+    "title": "4  oTree Hub and oTree Studio",
+    "section": "4.1 Create project by oTree hub",
+    "text": "4.1 Create project by oTree hub\n\nIf you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.\nhttps://www.otreehub.com/accounts/login/?next=/studio/\nClick the “+ Project” button to create a new project.\nThen you’re able to visit the project configuration page where you can config the metadata for your project.\nGo to the “download” and click the “Download .otreezip” button to download the project."
+  },
+  {
     "objectID": "chapter_4.html#pycharm-to-customize-the-project",
     "href": "chapter_4.html#pycharm-to-customize-the-project",
     "title": "4  oTree Hub and oTree Studio",
@@ -110,12 +117,5 @@
     "title": "5  On Heroku from oTree",
     "section": "",
     "text": "Go to your Heroku dashboard and click “Create new app”."
-  },
-  {
-    "objectID": "chapter_4.html#create-project-by-otree-hub",
-    "href": "chapter_4.html#create-project-by-otree-hub",
-    "title": "4  oTree Hub and oTree Studio",
-    "section": "4.1 Create project by oTree hub",
-    "text": "4.1 Create project by oTree hub\n\nIf you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.\nhttps://www.otreehub.com/accounts/login/?next=/studio/\nClick the “+ Project” button to create a new project.\nThen you’re able to visit the project configuration page where you can config the metadata for your project.\nGo to the “download” and click the “Download .otreezip” button to download the project."
   }
 ]
