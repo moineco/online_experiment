@@ -1,8 +1,8 @@
-# oTree Hub and oTree Studio
+# Pycharm to customize oTree Studio project
 
 oTree Studio is a point-and-click interface for building oTree apps. It is free to use for small/medium sized projects.
 
-## Create project by oTree hub
+## Create project by oTree Hub
 
 - If you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.
 

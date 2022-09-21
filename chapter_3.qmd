@@ -1,6 +1,6 @@
-# App in oTree
+# More on App in oTree
 
-## App
+## App structure
 
 1.  To create an application named **game_app** move to the oTree folder
 
@@ -20,7 +20,7 @@
 
 -   tests.py
 
-5.  In this folder, you will also find a subfolder
+5.  In this folder, you will also find a sub folder
 
 -   templates/game_app
 
