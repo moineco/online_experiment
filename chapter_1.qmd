@@ -36,7 +36,7 @@ pip install -U otree
 
 ## oTree setup
 
-- From your command prompt, create your IGG project
+- From your command prompt, create your **IGG** project
 
 ```default
 otree startproject IGG
@@ -56,8 +56,12 @@ otree devserver
 
 - Open your browser to http://localhost:8000/. You should see the oTree demo site.
 
-- To stop the server, press Control + C at your command line.
+- To stop the server, press **Control+C** at your command line.
 
-- To create a new app, run otree startapp your_app_name.
+- To create a new app, run 
 
-- Session configs are defined in settings.py.
+```default
+otree startapp app_name
+```
+
+- Session configs are defined in **settings.py**

@@ -1,4 +1,4 @@
-# Structure of an oTree project:
+# Structure of an oTree project
 
 ## App
 

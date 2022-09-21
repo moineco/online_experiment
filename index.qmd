@@ -6,3 +6,5 @@ oTree is a framework based on Python that lets you build:
  - Multiplayer strategy games, like the prisoner’s dilemma, public goods game, and auctions
  - Controlled behavioral experiments in economics, psychology, and related fields
  - Surveys and quizzes
+ 
+This tutorial will use Python to develop the experiment by using oTree software. For Python code generation, we will use **Pycharm Professional** software. 

@@ -5,7 +5,7 @@ project:
 book:
   title: "Experiments with oTree and Python"
   author: "Moinul Islam"
-  date: "9/17/2022"
+  date: "9/15/2022"
   chapters:
     - index.qmd
     - chapter_1.qmd
