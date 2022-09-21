@@ -46,21 +46,21 @@
     "href": "chapter_1.html#install-pycharm",
     "title": "1  Installation and environments",
     "section": "1.2 Install Pycharm",
-    "text": "1.2 Install Pycharm\n\nOpen Pycharm website. There are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version you need to have an academic email address which is from your University or institute.\nAlternatively you can install the community version of Pycharm which is free.\nRun Pycharm\nCreate a new Pycharm project. Choose pure python. Give a name of the project. And Pycharm will create the project for you"
+    "text": "1.2 Install Pycharm\n\nOpen Pycharm website. There are different version of Pycharm.\nI recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge."
   },
   {
     "objectID": "chapter_1.html#install-otree",
     "href": "chapter_1.html#install-otree",
     "title": "1  Installation and environments",
-    "section": "1.3 Install oTree",
-    "text": "1.3 Install oTree\nInstall oTree in your computer by using the terminal in Pycharm.\n\npip3 install otree\n\n\n1.3.1 Upgrading/reinstalling oTree\n\npip3 install -U otree\n\n\nRecommend upgrading every couple of weeks."
+    "section": "1.4 Install oTree",
+    "text": "1.4 Install oTree\nInstall oTree in your computer by using the terminal in Pycharm.\npip install otree\n\n1.4.1 Upgrading/reinstalling oTree\npip install -U otree\n\nRecommend upgrading every couple of weeks."
   },
   {
     "objectID": "chapter_1.html#otree-setup",
     "href": "chapter_1.html#otree-setup",
     "title": "1  Installation and environments",
-    "section": "1.4 oTree Setup",
-    "text": "1.4 oTree Setup\n\nFrom your command prompt, create your project folder:\n\n\notree startproject myproject\n\n\nMove into the folder you just created:\n\n\ncd myproject\n\n\nRun the server\n\n\notree devserver\n\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control + C at your command line.\nTo create a new app, run otree startapp your_app_name.\nSession configs are defined in settings.py."
+    "section": "1.5 oTree setup",
+    "text": "1.5 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control + C at your command line.\nTo create a new app, run otree startapp your_app_name.\nSession configs are defined in settings.py."
   },
   {
     "objectID": "chapter_3.html",
@@ -82,5 +82,12 @@
     "title": "3  Operationalize oTree",
     "section": "3.3 Pages.py",
     "text": "3.3 Pages.py\n\nPages that the participants see are defined in pages.py\nLogic for how to display the HTML templates\nwhen, how, and what to display\npage_sequence gives the order of pages\nIf there are multiple rounds the sequence is repeated\n\nFor instance,\n\nclass MyPage(Page):\npass\nclass ResultsWaitPage(WaitPage):\ndef after_all_players_arrive(self):\npass\nclass Results(Page):\npass\n\n\npage_sequence = [MyPage, ResultsWaitPage, Results]"
+  },
+  {
+    "objectID": "chapter_1.html#run-pycharm",
+    "href": "chapter_1.html#run-pycharm",
+    "title": "1  Installation and environments",
+    "section": "1.3 Run Pycharm",
+    "text": "1.3 Run Pycharm\n\nCreate a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you."
   }
 ]

@@ -1,55 +1,58 @@
 # Installation and environments
 
-
 ## Install Python
 
 - Open the python website and install python3 for your OS
 
 - Choose the most recent version of Python
 
-
 ## Install Pycharm
 
-- Open Pycharm website. 
-There are different version of Pycharm. 
-I recommend to install the Pycharm professional because it has better syntax highlighting. 
-To have the professional version you need to have an academic email address which is from your University or institute.
+- Open Pycharm website. There are different version of Pycharm. 
 
-- Alternatively you can install the community version of Pycharm which is free.
+- I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.
 
-- Run Pycharm  
+- Alternatively you can install the community version of Pycharm which is free of charge.
 
-- Create a new Pycharm project. Choose pure python. Give a name of the project. And Pycharm will create the project for you
+## Run Pycharm  
 
+- Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.
 
 ## Install oTree
 
 Install oTree in your computer by using the terminal in Pycharm.
 
-- pip3 install otree
-
+```default
+pip install otree
+```
 
 ### Upgrading/reinstalling oTree
 
-> pip3 install -U otree
+```default
+pip install -U otree
+```
 
 - Recommend upgrading every couple of weeks.
 
+## oTree setup
 
+- From your command prompt, create your IGG project
 
-## oTree Setup
+```default
+otree startproject IGG
+```
 
-- From your command prompt, create your project folder:
+- Move into the folder you just created
 
-> otree startproject myproject
-
-- Move into the folder you just created:
-
-> cd myproject
+```default
+cd IGG
+```
 
 - Run the server
 
-> otree devserver
+```default
+otree devserver
+```
 
 - Open your browser to http://localhost:8000/. You should see the oTree demo site.
 
@@ -58,5 +61,3 @@ Install oTree in your computer by using the terminal in Pycharm.
 - To create a new app, run otree startapp your_app_name.
 
 - Session configs are defined in settings.py.
-
-

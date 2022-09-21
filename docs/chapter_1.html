@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -115,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 4</span></a>
+  <a href="./chapter_4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Create project by oTree hub</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,11 +227,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#install-python" id="toc-install-python" class="nav-link active" data-scroll-target="#install-python"><span class="toc-section-number">1.1</span>  Install Python</a></li>
   <li><a href="#install-pycharm" id="toc-install-pycharm" class="nav-link" data-scroll-target="#install-pycharm"><span class="toc-section-number">1.2</span>  Install Pycharm</a></li>
-  <li><a href="#install-otree" id="toc-install-otree" class="nav-link" data-scroll-target="#install-otree"><span class="toc-section-number">1.3</span>  Install oTree</a>
+  <li><a href="#run-pycharm" id="toc-run-pycharm" class="nav-link" data-scroll-target="#run-pycharm"><span class="toc-section-number">1.3</span>  Run Pycharm</a></li>
+  <li><a href="#install-otree" id="toc-install-otree" class="nav-link" data-scroll-target="#install-otree"><span class="toc-section-number">1.4</span>  Install oTree</a>
   <ul class="collapse">
-  <li><a href="#upgradingreinstalling-otree" id="toc-upgradingreinstalling-otree" class="nav-link" data-scroll-target="#upgradingreinstalling-otree"><span class="toc-section-number">1.3.1</span>  Upgrading/reinstalling oTree</a></li>
+  <li><a href="#upgradingreinstalling-otree" id="toc-upgradingreinstalling-otree" class="nav-link" data-scroll-target="#upgradingreinstalling-otree"><span class="toc-section-number">1.4.1</span>  Upgrading/reinstalling oTree</a></li>
   </ul></li>
-  <li><a href="#otree-setup" id="toc-otree-setup" class="nav-link" data-scroll-target="#otree-setup"><span class="toc-section-number">1.4</span>  oTree Setup</a></li>
+  <li><a href="#otree-setup" id="toc-otree-setup" class="nav-link" data-scroll-target="#otree-setup"><span class="toc-section-number">1.5</span>  oTree setup</a></li>
   </ul>
 </nav>
     </div>
@@ -201,48 +265,43 @@ ul.task-list li input[type="checkbox"] {
 <section id="install-pycharm" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="install-pycharm"><span class="header-section-number">1.2</span> Install Pycharm</h2>
 <ul>
-<li><p>Open Pycharm website. There are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version you need to have an academic email address which is from your University or institute.</p></li>
-<li><p>Alternatively you can install the community version of Pycharm which is free.</p></li>
-<li><p>Run Pycharm</p></li>
-<li><p>Create a new Pycharm project. Choose pure python. Give a name of the project. And Pycharm will create the project for you</p></li>
+<li><p>Open Pycharm website. There are different version of Pycharm.</p></li>
+<li><p>I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.</p></li>
+<li><p>Alternatively you can install the community version of Pycharm which is free of charge.</p></li>
 </ul>
 </section>
-<section id="install-otree" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="install-otree"><span class="header-section-number">1.3</span> Install oTree</h2>
-<p>Install oTree in your computer by using the terminal in Pycharm.</p>
+<section id="run-pycharm" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="run-pycharm"><span class="header-section-number">1.3</span> Run Pycharm</h2>
 <ul>
-<li>pip3 install otree</li>
+<li>Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.</li>
 </ul>
-<section id="upgradingreinstalling-otree" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="upgradingreinstalling-otree"><span class="header-section-number">1.3.1</span> Upgrading/reinstalling oTree</h3>
-<blockquote class="blockquote">
-<p>pip3 install -U otree</p>
-</blockquote>
+</section>
+<section id="install-otree" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="install-otree"><span class="header-section-number">1.4</span> Install oTree</h2>
+<p>Install oTree in your computer by using the terminal in Pycharm.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install otree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="upgradingreinstalling-otree" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="upgradingreinstalling-otree"><span class="header-section-number">1.4.1</span> Upgrading/reinstalling oTree</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install -U otree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Recommend upgrading every couple of weeks.</li>
 </ul>
 </section>
 </section>
-<section id="otree-setup" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="otree-setup"><span class="header-section-number">1.4</span> oTree Setup</h2>
+<section id="otree-setup" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="otree-setup"><span class="header-section-number">1.5</span> oTree setup</h2>
 <ul>
-<li>From your command prompt, create your project folder:</li>
+<li>From your command prompt, create your IGG project</li>
 </ul>
-<blockquote class="blockquote">
-<p>otree startproject myproject</p>
-</blockquote>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>otree startproject IGG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Move into the folder you just created:</li>
+<li>Move into the folder you just created</li>
 </ul>
-<blockquote class="blockquote">
-<p>cd myproject</p>
-</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cd IGG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Run the server</li>
 </ul>
-<blockquote class="blockquote">
-<p>otree devserver</p>
-</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>otree devserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Open your browser to http://localhost:8000/. You should see the oTree demo site.</p></li>
 <li><p>To stop the server, press Control + C at your command line.</p></li>
