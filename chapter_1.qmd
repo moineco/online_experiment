@@ -2,15 +2,28 @@
 
 ## Install Python
 
-- Open the python website and install python3 for your OS
+- Before installing oTree, it is required to have Python installed in your environment to run oTree.
+
+- Open the python website and install **Python3** for your OS from this website:
+
+- <https://www.python.org/>
 
 - Choose the most recent version of Python
 
+## Install pip
+
+If your Python environment does not have pip installed, you can install pip by following this instructions
+
+- <https://pip.pypa.io/en/stable/installation/>
+
 ## Install Pycharm
 
-- Open Pycharm website. There are different version of Pycharm. 
+- PyCharm is a famous Python IDE (Integrated Development Environment). We
+recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this website to download the installation package. For oTree development, a free community version should be sufficient.
 
-- I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.
+- <https://www.jetbrains.com/help/pycharm/installation-guide.html>
+
+- There are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.
 
 - Alternatively you can install the community version of Pycharm which is free of charge.
 
@@ -20,16 +33,22 @@
 
 ## Install oTree
 
-Install oTree in your computer by using the terminal in Pycharm.
+- oTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:
 
 ```default
-pip install otree
+pip3 install otree
+```
+
+- You can install oTree in your computer by using the terminal in Pycharm as well.
+
+```default
+pip3 install otree
 ```
 
 ### Upgrading/reinstalling oTree
 
 ```default
-pip install -U otree
+pip3 install -U otree
 ```
 
 - Recommend upgrading every couple of weeks.

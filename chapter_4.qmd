@@ -1,1 +1,42 @@
-# Create project by oTree hub
+# Customize oTree hub output
+
+## Create project by oTree hub
+
+- If you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.
+
+- <https://www.otreehub.com/accounts/login/?next=/studio/>
+
+- Click the “+ Project” button to create a new project.
+
+- Then you’re able to visit the project configuration page where you can config the metadata for your project.
+
+- Go to the "download" and click the “Download .otreezip” button to
+download the project.
+
+## PyCharm to customize the project
+
+- After creating and customizing your project on oTree Studio, you can also further customize your project using PyCharm or other IDE. First, you need to unpack your downloaded **.otreezip** file. To do this, run:
+
+```default
+otree unzip xx.otreezip
+```
+
+- The command will produce a folder with an identical name. Use PyCharm to open that folder.
+
+- Then, you can add python code to further customize the project. After adding your code, run the following command to re-pack the project into the .otreezip file:
+
+```default
+otree zip
+```
+
+## Host the App locally
+
+- Open a terminal/Command Prompt on your computer and change the working
+directory to where you store your previously downloaded project file.
+Execute the following command to start an oTree test server:
+
+```default
+otree zipserver
+```
+
+- Then, you can open <http://localhost:8000/> in your browser to test your project out.

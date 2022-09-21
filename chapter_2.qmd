@@ -26,7 +26,7 @@
 
 >settings.py 
 
-  - It is also global option. From this setting file, you can chage various global options, for instance  Your currency, language, interface 
+  - It is also global option. From this setting file, you can change various global options, for instance  Your currency, language, interface 
 
   - In this **setting.py** file you will find the session_configs where you can setup the sequence of apps for your project.
 
@@ -53,15 +53,17 @@ otree startapp SVO
 
 - You will notice that a new app named "SVO" is listed on your Pycharm
 
+- If you don’t see a models.py in each folder, that means you are using the new no-self format.
+
 - If you open the app, you can see that it contains three different types of files:
 
-    - _init.py
+    - init.py
     
     - MyPage.html
     
     - Results.html
 
-If you open the _init.py you can find several different class.
+If you open the **init.py** you can find several different class.
 
 You can edit it based on your game. Two most important classes are:
  
