@@ -103,5 +103,12 @@
     "title": "4  Customize oTree hub output",
     "section": "4.3 Host the App locally",
     "text": "4.3 Host the App locally\n\nOpen a terminal/Command Prompt on your computer and change the working directory to where you store your previously downloaded project file. Execute the following command to start an oTree test server:\n\notree zipserver\n\nThen, you can open http://localhost:8000/ in your browser to test your project out."
+  },
+  {
+    "objectID": "chapter_5.html",
+    "href": "chapter_5.html",
+    "title": "5  On Heroku from oTree",
+    "section": "",
+    "text": "Heroku is a website hosting service where you can easily host your oTree application and open access to the public."
   }
 ]
