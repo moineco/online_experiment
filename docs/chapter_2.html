@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Experiments with oTree and Python - 2&nbsp; Chapter 2</title>
+<title>Experiments with oTree and Python - 2&nbsp; Structure of an oTree project:</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -100,17 +100,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></a>
+  <a href="./chapter_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation of necessary program and environments:</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></a>
+  <a href="./chapter_2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></a>
+  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,14 +158,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#app" id="toc-app" class="nav-link active" data-scroll-target="#app"><span class="toc-section-number">2.1</span>  App</a></li>
+  <li><a href="#how-to-create-a-new-app." id="toc-how-to-create-a-new-app." class="nav-link" data-scroll-target="#how-to-create-a-new-app."><span class="toc-section-number">2.2</span>  How to create a new app.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></h1>
 </div>
 
 
@@ -179,8 +186,54 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="app" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="app"><span class="header-section-number">2.1</span> App</h2>
+<ul>
+<li><p>One app can be an experiment or a part of experiment. A project is collection of all different types of App</p></li>
+<li><p>If your experiment consist of a prisoner’s dilemma game and a survey, then you need to create two apps, one app for prisoners dilemma and another app is for survey.</p></li>
+<li><p>Later you can combine these two apps and run one session.</p></li>
+<li><p>App is like one experiment and project is like a container of different experiments.</p></li>
+<li><p>How you structure the projects is up to you. You can choose the sequence.</p></li>
+</ul>
+<p>Now if you see the structure of the examples, you can see that there are various different types of folder.</p>
+<p>The following two folders are known as global settings as they are same level of the project</p>
+<p>_Static ………Images, sounds, videos</p>
+<p>_Template …………Design how web page look like. If you want a specific style of your webpage, you can include a template</p>
+<p>settings.py is also global option. From this setting file, you can chage various global options, for instance</p>
+<pre><code>..... your currency, language, interface </code></pre>
+<p>In this <strong>setting.py</strong> file you will find the session_configs where you can</p>
+</section>
+<section id="how-to-create-a-new-app." class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="how-to-create-a-new-app."><span class="header-section-number">2.2</span> How to create a new app.</h2>
+<ul>
+<li>Navigate your working folder by using cd For instance you are using the folder <strong>myproject</strong>. Then use</li>
+</ul>
+<blockquote class="blockquote">
+<p>cd myproject</p>
+</blockquote>
+<p>to navigate in this folder</p>
+<ul>
+<li>Now you can create a new app from the terminal.</li>
+</ul>
+<p>If you want to create a app, name “testapp”</p>
+<blockquote class="blockquote">
+<p>tree startapp testapp</p>
+</blockquote>
+<ul>
+<li><p>You will notice that a new app named “testapp” is listed on your pycharm</p></li>
+<li><p>If you open the app, you can see that it contains three different types of files:</p>
+<p>– _init__.py – MyPage.html – Results.html</p></li>
+</ul>
+<p>If you open the –init__.py you can find several different class.</p>
+<p>You can edit it based on your game Two most important classes are</p>
+<ul>
+<li>class Constants</li>
+<li>class Player. Everything we want to analyze and store in data should be stored in Player</li>
+</ul>
+<p>Html files are to design the outlook of website</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -284,12 +337,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./chapter_1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation of necessary program and environments:</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./chapter_3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

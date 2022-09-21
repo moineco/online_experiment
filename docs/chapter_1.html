@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Experiments with oTree and Python - 1&nbsp; Operationalize oTree</title>
+<title>Experiments with oTree and Python - 1&nbsp; Installation and environments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation and environments</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -100,17 +100,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></a>
+  <a href="./chapter_1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation and environments</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></a>
+  <a href="./chapter_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></a>
+  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -162,12 +162,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#app" id="toc-app" class="nav-link active" data-scroll-target="#app"><span class="toc-section-number">1.1</span>  App</a>
+  <li><a href="#install-python" id="toc-install-python" class="nav-link active" data-scroll-target="#install-python"><span class="toc-section-number">1.1</span>  Install Python</a></li>
+  <li><a href="#install-pycharm" id="toc-install-pycharm" class="nav-link" data-scroll-target="#install-pycharm"><span class="toc-section-number">1.2</span>  Install Pycharm</a></li>
+  <li><a href="#install-otree" id="toc-install-otree" class="nav-link" data-scroll-target="#install-otree"><span class="toc-section-number">1.3</span>  Install oTree</a>
   <ul class="collapse">
-  <li><a href="#game_app" id="toc-game_app" class="nav-link" data-scroll-target="#game_app"><span class="toc-section-number">1.1.1</span>  game_app</a></li>
+  <li><a href="#upgradingreinstalling-otree" id="toc-upgradingreinstalling-otree" class="nav-link" data-scroll-target="#upgradingreinstalling-otree"><span class="toc-section-number">1.3.1</span>  Upgrading/reinstalling oTree</a></li>
   </ul></li>
-  <li><a href="#models.py" id="toc-models.py" class="nav-link" data-scroll-target="#models.py"><span class="toc-section-number">1.2</span>  Models.py</a></li>
-  <li><a href="#pages.py" id="toc-pages.py" class="nav-link" data-scroll-target="#pages.py"><span class="toc-section-number">1.3</span>  Pages.py</a></li>
+  <li><a href="#otree-setup" id="toc-otree-setup" class="nav-link" data-scroll-target="#otree-setup"><span class="toc-section-number">1.4</span>  oTree Setup</a></li>
   </ul>
 </nav>
     </div>
@@ -176,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation and environments</span></h1>
 </div>
 
 
@@ -190,87 +191,63 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="app" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="app"><span class="header-section-number">1.1</span> App</h2>
-<section id="game_app" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="game_app"><span class="header-section-number">1.1.1</span> game_app</h3>
-<ol type="1">
-<li>To create an application named <strong>game_app</strong> move to the oTree folder</li>
-</ol>
+<section id="install-python" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="install-python"><span class="header-section-number">1.1</span> Install Python</h2>
 <ul>
-<li>cd oTree</li>
+<li><p>Open the python website and install python3 for your OS</p></li>
+<li><p>Choose the most recent version of Python</p></li>
 </ul>
-<ol start="2" type="1">
-<li>Create the application</li>
-</ol>
+</section>
+<section id="install-pycharm" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="install-pycharm"><span class="header-section-number">1.2</span> Install Pycharm</h2>
 <ul>
-<li>otree startapp game_app</li>
+<li><p>Open Pycharm website. There are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version you need to have an academic email address which is from your University or institute.</p></li>
+<li><p>Alternatively you can install the community version of Pycharm which is free.</p></li>
+<li><p>Run Pycharm</p></li>
+<li><p>Create a new Pycharm project. Choose pure python. Give a name of the project. And Pycharm will create the project for you</p></li>
 </ul>
-<ol start="3" type="1">
-<li><p>Move to the folder <strong>game_app</strong></p></li>
-<li><p>In this folder, you will find the following files as default</p></li>
-</ol>
+</section>
+<section id="install-otree" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="install-otree"><span class="header-section-number">1.3</span> Install oTree</h2>
+<p>Install oTree in your computer by using the terminal in Pycharm.</p>
 <ul>
-<li><p>models.py</p></li>
-<li><p>pages.py</p></li>
-<li><p>tests.py</p></li>
+<li>pip3 install otree</li>
 </ul>
-<ol start="5" type="1">
-<li>In this folder, you will also find a subfolder</li>
-</ol>
+<section id="upgradingreinstalling-otree" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="upgradingreinstalling-otree"><span class="header-section-number">1.3.1</span> Upgrading/reinstalling oTree</h3>
+<blockquote class="blockquote">
+<p>pip3 install -U otree</p>
+</blockquote>
 <ul>
-<li><p>templates/game_app</p>
-<ul>
-<li><p>Mypage.html</p></li>
-<li><p>Results.html</p></li>
-</ul></li>
+<li>Recommend upgrading every couple of weeks.</li>
 </ul>
 </section>
 </section>
-<section id="models.py" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="models.py"><span class="header-section-number">1.2</span> Models.py</h2>
-<p>A model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python <strong>class</strong></p>
+<section id="otree-setup" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="otree-setup"><span class="header-section-number">1.4</span> oTree Setup</h2>
 <ul>
-<li><p>Subsession</p></li>
-<li><p>Group</p></li>
-<li><p>Player</p></li>
+<li>From your command prompt, create your project folder:</li>
 </ul>
-<ol type="1">
-<li><p>class Subsession(BaseSubsession):</p>
+<blockquote class="blockquote">
+<p>otree startproject myproject</p>
+</blockquote>
 <ul>
-<li>pass</li>
-</ul></li>
-<li><p>class Group(BaseGroup):</p>
-<ul>
-<li>pass</li>
-</ul></li>
-<li><p>class Player(BasePlayer):</p>
-<ul>
-<li>pass</li>
-</ul></li>
-</ol>
-</section>
-<section id="pages.py" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="pages.py"><span class="header-section-number">1.3</span> Pages.py</h2>
-<ul>
-<li><p>Pages that the participants see are defined in pages.py</p>
-<p>Logic for how to display the HTML templates</p>
-<p>when, how, and what to display</p></li>
-<li><p>page_sequence gives the order of pages</p>
-<p>If there are multiple rounds the sequence is repeated</p></li>
+<li>Move into the folder you just created:</li>
 </ul>
-<p>For instance,</p>
-<ol type="1">
-<li><p>class MyPage(Page):</p>
-<p>pass</p></li>
-<li><p>class ResultsWaitPage(WaitPage):</p>
-<p>def after_all_players_arrive(self):</p>
-<p>pass</p></li>
-<li><p>class Results(Page):</p>
-<p>pass</p></li>
-</ol>
+<blockquote class="blockquote">
+<p>cd myproject</p>
+</blockquote>
 <ul>
-<li>page_sequence = [MyPage, ResultsWaitPage, Results]</li>
+<li>Run the server</li>
+</ul>
+<blockquote class="blockquote">
+<p>otree devserver</p>
+</blockquote>
+<ul>
+<li><p>Open your browser to http://localhost:8000/. You should see the oTree demo site.</p></li>
+<li><p>To stop the server, press Control + C at your command line.</p></li>
+<li><p>To create a new app, run otree startapp your_app_name.</p></li>
+<li><p>Session configs are defined in settings.py.</p></li>
 </ul>
 
 
@@ -383,7 +360,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./chapter_2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

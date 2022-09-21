@@ -1,83 +1,62 @@
-# Operationalize oTree
+# Installation and environments
 
-## App
 
-### game_app
+## Install Python
 
-1.  To create an application named **game_app** move to the oTree folder
+- Open the python website and install python3 for your OS
 
--   cd oTree
+- Choose the most recent version of Python
 
-2.  Create the application
 
--   otree startapp game_app
+## Install Pycharm
 
-3.  Move to the folder **game_app**
+- Open Pycharm website. 
+There are different version of Pycharm. 
+I recommend to install the Pycharm professional because it has better syntax highlighting. 
+To have the professional version you need to have an academic email address which is from your University or institute.
 
-4.  In this folder, you will find the following files as default
+- Alternatively you can install the community version of Pycharm which is free.
 
--   models.py
+- Run Pycharm  
 
--   pages.py
+- Create a new Pycharm project. Choose pure python. Give a name of the project. And Pycharm will create the project for you
 
--   tests.py
 
-5.  In this folder, you will also find a subfolder
+## Install oTree
 
--   templates/game_app
+Install oTree in your computer by using the terminal in Pycharm.
 
-    -   Mypage.html
+- pip3 install otree
 
-    -   Results.html
 
-## Models.py
+### Upgrading/reinstalling oTree
 
-A model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python **class**
+> pip3 install -U otree
 
--   Subsession
+- Recommend upgrading every couple of weeks.
 
--   Group
 
--   Player
 
-1.  class Subsession(BaseSubsession):
+## oTree Setup
 
-    -   pass
+- From your command prompt, create your project folder:
 
-2.  class Group(BaseGroup):
+> otree startproject myproject
 
-    -   pass
+- Move into the folder you just created:
 
-3.  class Player(BasePlayer):
+> cd myproject
 
-    -   pass
+- Run the server
 
-## Pages.py
+> otree devserver
 
--   Pages that the participants see are defined in pages.py
+- Open your browser to http://localhost:8000/. You should see the oTree demo site.
 
-    Logic for how to display the HTML templates
+- To stop the server, press Control + C at your command line.
 
-    when, how, and what to display
+- To create a new app, run otree startapp your_app_name.
 
--   page_sequence gives the order of pages
+- Session configs are defined in settings.py.
 
-    If there are multiple rounds the sequence is repeated
 
-For instance,
-
-1.  class MyPage(Page):
-
-    pass
-
-2.  class ResultsWaitPage(WaitPage):
-
-    def after_all_players_arrive(self):
-
-    pass
-
-3.  class Results(Page):
-
-    pass
-
--   page_sequence = \[MyPage, ResultsWaitPage, Results\]

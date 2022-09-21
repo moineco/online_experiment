@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Experiments with oTree and Python - 3&nbsp; Chapter 3</title>
+<title>Experiments with oTree and Python - 3&nbsp; Operationalize oTree</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -100,17 +100,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></a>
+  <a href="./chapter_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation of necessary program and environments:</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></a>
+  <a href="./chapter_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></a>
+  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,14 +158,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#app" id="toc-app" class="nav-link active" data-scroll-target="#app"><span class="toc-section-number">3.1</span>  App</a>
+  <ul class="collapse">
+  <li><a href="#game_app" id="toc-game_app" class="nav-link" data-scroll-target="#game_app"><span class="toc-section-number">3.1.1</span>  game_app</a></li>
+  </ul></li>
+  <li><a href="#models.py" id="toc-models.py" class="nav-link" data-scroll-target="#models.py"><span class="toc-section-number">3.2</span>  Models.py</a></li>
+  <li><a href="#pages.py" id="toc-pages.py" class="nav-link" data-scroll-target="#pages.py"><span class="toc-section-number">3.3</span>  Pages.py</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operationalize oTree</span></h1>
 </div>
 
 
@@ -179,8 +190,91 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="app" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="app"><span class="header-section-number">3.1</span> App</h2>
+<section id="game_app" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="game_app"><span class="header-section-number">3.1.1</span> game_app</h3>
+<ol type="1">
+<li>To create an application named <strong>game_app</strong> move to the oTree folder</li>
+</ol>
+<ul>
+<li>cd oTree</li>
+</ul>
+<ol start="2" type="1">
+<li>Create the application</li>
+</ol>
+<ul>
+<li>otree startapp game_app</li>
+</ul>
+<ol start="3" type="1">
+<li><p>Move to the folder <strong>game_app</strong></p></li>
+<li><p>In this folder, you will find the following files as default</p></li>
+</ol>
+<ul>
+<li><p>models.py</p></li>
+<li><p>pages.py</p></li>
+<li><p>tests.py</p></li>
+</ul>
+<ol start="5" type="1">
+<li>In this folder, you will also find a subfolder</li>
+</ol>
+<ul>
+<li><p>templates/game_app</p>
+<ul>
+<li><p>Mypage.html</p></li>
+<li><p>Results.html</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="models.py" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="models.py"><span class="header-section-number">3.2</span> Models.py</h2>
+<p>A model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python <strong>class</strong></p>
+<ul>
+<li><p>Subsession</p></li>
+<li><p>Group</p></li>
+<li><p>Player</p></li>
+</ul>
+<ol type="1">
+<li><p>class Subsession(BaseSubsession):</p>
+<ul>
+<li>pass</li>
+</ul></li>
+<li><p>class Group(BaseGroup):</p>
+<ul>
+<li>pass</li>
+</ul></li>
+<li><p>class Player(BasePlayer):</p>
+<ul>
+<li>pass</li>
+</ul></li>
+</ol>
+</section>
+<section id="pages.py" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="pages.py"><span class="header-section-number">3.3</span> Pages.py</h2>
+<ul>
+<li><p>Pages that the participants see are defined in pages.py</p>
+<p>Logic for how to display the HTML templates</p>
+<p>when, how, and what to display</p></li>
+<li><p>page_sequence gives the order of pages</p>
+<p>If there are multiple rounds the sequence is repeated</p></li>
+</ul>
+<p>For instance,</p>
+<ol type="1">
+<li><p>class MyPage(Page):</p>
+<p>pass</p></li>
+<li><p>class ResultsWaitPage(WaitPage):</p>
+<p>def after_all_players_arrive(self):</p>
+<p>pass</p></li>
+<li><p>class Results(Page):</p>
+<p>pass</p></li>
+</ol>
+<ul>
+<li>page_sequence = [MyPage, ResultsWaitPage, Results]</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -284,7 +378,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./chapter_2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 2</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Structure of an oTree project:</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
