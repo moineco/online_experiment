@@ -1,4 +1,6 @@
-# Customize oTree hub output
+# oTree Hub and oTree Studio
+
+oTree Studio is a point-and-click interface for building oTree apps. It is free to use for small/medium sized projects.
 
 ## Create project by oTree hub
 

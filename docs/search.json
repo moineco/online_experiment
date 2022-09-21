@@ -86,21 +86,21 @@
   {
     "objectID": "chapter_4.html",
     "href": "chapter_4.html",
-    "title": "4  Customize oTree hub output",
+    "title": "4  oTree Hub and oTree Studio",
     "section": "",
-    "text": "If you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.\nhttps://www.otreehub.com/accounts/login/?next=/studio/\nClick the “+ Project” button to create a new project.\nThen you’re able to visit the project configuration page where you can config the metadata for your project.\nGo to the “download” and click the “Download .otreezip” button to download the project."
+    "text": "oTree Studio is a point-and-click interface for building oTree apps. It is free to use for small/medium sized projects."
   },
   {
     "objectID": "chapter_4.html#pycharm-to-customize-the-project",
     "href": "chapter_4.html#pycharm-to-customize-the-project",
-    "title": "4  Customize oTree hub output",
+    "title": "4  oTree Hub and oTree Studio",
     "section": "4.2 PyCharm to customize the project",
     "text": "4.2 PyCharm to customize the project\n\nAfter creating and customizing your project on oTree Studio, you can also further customize your project using PyCharm or other IDE. First, you need to unpack your downloaded .otreezip file. To do this, run:\n\notree unzip xx.otreezip\n\nThe command will produce a folder with an identical name. Use PyCharm to open that folder.\nThen, you can add python code to further customize the project. After adding your code, run the following command to re-pack the project into the .otreezip file:\n\notree zip"
   },
   {
     "objectID": "chapter_4.html#host-the-app-locally",
     "href": "chapter_4.html#host-the-app-locally",
-    "title": "4  Customize oTree hub output",
+    "title": "4  oTree Hub and oTree Studio",
     "section": "4.3 Host the App locally",
     "text": "4.3 Host the App locally\n\nOpen a terminal/Command Prompt on your computer and change the working directory to where you store your previously downloaded project file. Execute the following command to start an oTree test server:\n\notree zipserver\n\nThen, you can open http://localhost:8000/ in your browser to test your project out."
   },
@@ -110,5 +110,12 @@
     "title": "5  On Heroku from oTree",
     "section": "",
     "text": "Go to your Heroku dashboard and click “Create new app”."
+  },
+  {
+    "objectID": "chapter_4.html#create-project-by-otree-hub",
+    "href": "chapter_4.html#create-project-by-otree-hub",
+    "title": "4  oTree Hub and oTree Studio",
+    "section": "4.1 Create project by oTree hub",
+    "text": "4.1 Create project by oTree hub\n\nIf you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.\nhttps://www.otreehub.com/accounts/login/?next=/studio/\nClick the “+ Project” button to create a new project.\nThen you’re able to visit the project configuration page where you can config the metadata for your project.\nGo to the “download” and click the “Download .otreezip” button to download the project."
   }
 ]
