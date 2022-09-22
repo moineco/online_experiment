@@ -1,24 +1,22 @@
-# More on App in oTree
+# Building blocks of apps in oTree
 
 ## App structure
 
 1.  To create an application named **game_app** move to the oTree folder
 
--   cd oTree
+```default
+cd oTree
+```
 
 2.  Create the application
 
--   otree startapp game_app
+```default
+otree startapp game_app
+```
 
 3.  Move to the folder **game_app**
 
 4.  In this folder, you will find the following files as default
-
--   models.py
-
--   pages.py
-
--   tests.py
 
 5.  In this folder, you will also find a sub folder
 
@@ -28,15 +26,23 @@
 
     -   Results.html
 
-## Models.py
 
-A model is basically a database. Here we define the structure of the data. For instance, in a three data models. This is python **class**
+## Building blocks
 
--   Subsession
+### init.py  
 
--   Group
+- Used to define every variable that you use in your experimet. 
+- Used to determine what is showed, when,and how long
 
--   Player
+### Templates 
+
+- Every page in your experiment is a template with text and layout
+
+### Settings.py 
+
+- Used to determine payoff structure and general application setting
+
+## init.py
 
 1.  class Subsession(BaseSubsession):
 
@@ -49,8 +55,6 @@ A model is basically a database. Here we define the structure of the data. For i
 3.  class Player(BasePlayer):
 
     -   pass
-
-## Pages.py
 
 -   Pages that the participants see are defined in pages.py
 
