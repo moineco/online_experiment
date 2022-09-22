@@ -11,21 +11,21 @@
     "href": "chapter_1.html",
     "title": "1  Installation and environments",
     "section": "",
-    "text": "Before installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this website:\nhttps://www.python.org/\nChoose the most recent version of Python"
+    "text": "Before installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this Python website.\nChoose the most recent version of Python"
   },
   {
     "objectID": "chapter_1.html#install-pip",
     "href": "chapter_1.html#install-pip",
     "title": "1  Installation and environments",
     "section": "1.2 Install pip",
-    "text": "1.2 Install pip\nIf your Python environment does not have pip installed, you can install pip by following this instructions\n\nhttps://pip.pypa.io/en/stable/installation/"
+    "text": "1.2 Install pip\nIf your Python environment does not have pip installed, you can install it by following this pip instructions."
   },
   {
     "objectID": "chapter_1.html#install-pycharm",
     "href": "chapter_1.html#install-pycharm",
     "title": "1  Installation and environments",
     "section": "1.3 Install Pycharm",
-    "text": "1.3 Install Pycharm\n\nPyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this website to download the installation package. For oTree development, a free community version should be sufficient.\nhttps://www.jetbrains.com/help/pycharm/installation-guide.html\nThere are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge."
+    "text": "1.3 Install Pycharm\n\nPyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this Pycharm website to download the installation package.\nThere are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge."
   },
   {
     "objectID": "chapter_1.html#run-pycharm",
