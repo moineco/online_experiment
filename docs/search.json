@@ -25,7 +25,7 @@
     "href": "chapter_1.html#install-pycharm",
     "title": "1  Installation and environments",
     "section": "1.3 Install Pycharm",
-    "text": "1.3 Install Pycharm\n\nPyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this Pycharm website to download the installation package.\nThere are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge."
+    "text": "1.3 Install Pycharm\n\nPyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this Pycharm website to download the installation package.\nThere are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge.\n\n\n1.3.1 Run Pycharm\n\nCreate a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you."
   },
   {
     "objectID": "chapter_1.html#run-pycharm",
@@ -38,15 +38,15 @@
     "objectID": "chapter_1.html#install-otree",
     "href": "chapter_1.html#install-otree",
     "title": "1  Installation and environments",
-    "section": "1.6 Install oTree",
-    "text": "1.6 Install oTree\n\noTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:\n\npip3 install otree\n\nYou can install oTree in your computer by using the terminal in Pycharm as well.\n\npip3 install otree\n\n1.6.1 Upgrading/reinstalling oTree\npip3 install -U otree\n\nRecommend upgrading every couple of weeks.\n\n\n\n1.6.2 Regarding the installation of oTree in Linux\n\nYou might need to do the proxy server settings\nIn the Pycharm, you can open the terminal and install oTree as below:\n\nset https_proxy http://proxy.noc.kochi-tech.ac.jp:3128\npip install otree"
+    "section": "1.5 Install oTree",
+    "text": "1.5 Install oTree\n\noTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:\n\npip3 install otree\n\nYou can install oTree in your computer by using the terminal in Pycharm as well.\n\npip3 install otree\n\n1.5.1 Upgrading/reinstalling oTree\npip3 install -U otree\n\nRecommend upgrading every couple of weeks.\n\n\n\n1.5.2 Regarding the installation of oTree in Linux\n\nYou might need to do the proxy server settings\nIn the Pycharm, you can open the terminal and install oTree as below:\n\nset https_proxy http://proxy.noc.kochi-tech.ac.jp:3128\npip install otree"
   },
   {
     "objectID": "chapter_1.html#otree-setup",
     "href": "chapter_1.html#otree-setup",
     "title": "1  Installation and environments",
-    "section": "1.7 oTree setup",
-    "text": "1.7 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control+C at your command line.\nTo create a new app, run\n\notree startapp app_name\n\nSession configs are defined in settings.py"
+    "section": "1.6 oTree setup",
+    "text": "1.6 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control+C at your command line.\nTo create a new app, run\n\notree startapp app_name\n\nSession configs are defined in settings.py"
   },
   {
     "objectID": "chapter_2.html",
@@ -122,8 +122,8 @@
     "objectID": "chapter_1.html#github",
     "href": "chapter_1.html#github",
     "title": "1  Installation and environments",
-    "section": "1.5 GitHub",
-    "text": "1.5 GitHub\nMake sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code."
+    "section": "1.4 GitHub",
+    "text": "1.4 GitHub\nMake sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code."
   },
   {
     "objectID": "chapter_1.html#regarding-the-installation-of-otree-in-linux-fedora-or-ubuntu",
@@ -159,5 +159,12 @@
     "title": "6  Basic survey by using oTree",
     "section": "",
     "text": "- Introduction.html\n- Survey1.html\n- Survey2.html\n- Survey3.html\n- Demographics.html\nThe questionnaire always starts with Introduction.html, and always ends with a Demographics.html.Between these two pages, the application randomizes other pages included under templates as “Survey.html”. The order of items and questions on every page are also randomized. The questionnaire also includes a progress bar."
+  },
+  {
+    "objectID": "chapter_1.html#install-github",
+    "href": "chapter_1.html#install-github",
+    "title": "1  Installation and environments",
+    "section": "1.4 Install GitHub",
+    "text": "1.4 Install GitHub\nMake sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code."
   }
 ]

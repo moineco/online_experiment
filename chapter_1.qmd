@@ -22,11 +22,11 @@ recommend you to use PyCharm if you want to further customize your oTree app by 
 
 - Alternatively you can install the community version of Pycharm which is free of charge.
 
-## Run Pycharm  
+### Run Pycharm  
 
 - Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.
 
-## GitHub
+## Install GitHub
 
 Make sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code.
 
