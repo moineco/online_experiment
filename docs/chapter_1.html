@@ -229,11 +229,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#install-pip" id="toc-install-pip" class="nav-link" data-scroll-target="#install-pip"><span class="toc-section-number">1.2</span>  Install pip</a></li>
   <li><a href="#install-pycharm" id="toc-install-pycharm" class="nav-link" data-scroll-target="#install-pycharm"><span class="toc-section-number">1.3</span>  Install Pycharm</a></li>
   <li><a href="#run-pycharm" id="toc-run-pycharm" class="nav-link" data-scroll-target="#run-pycharm"><span class="toc-section-number">1.4</span>  Run Pycharm</a></li>
-  <li><a href="#install-otree" id="toc-install-otree" class="nav-link" data-scroll-target="#install-otree"><span class="toc-section-number">1.5</span>  Install oTree</a>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github"><span class="toc-section-number">1.5</span>  GitHub</a></li>
+  <li><a href="#install-otree" id="toc-install-otree" class="nav-link" data-scroll-target="#install-otree"><span class="toc-section-number">1.6</span>  Install oTree</a>
   <ul class="collapse">
-  <li><a href="#upgradingreinstalling-otree" id="toc-upgradingreinstalling-otree" class="nav-link" data-scroll-target="#upgradingreinstalling-otree"><span class="toc-section-number">1.5.1</span>  Upgrading/reinstalling oTree</a></li>
+  <li><a href="#upgradingreinstalling-otree" id="toc-upgradingreinstalling-otree" class="nav-link" data-scroll-target="#upgradingreinstalling-otree"><span class="toc-section-number">1.6.1</span>  Upgrading/reinstalling oTree</a></li>
+  <li><a href="#regarding-the-installation-of-otree-in-linux" id="toc-regarding-the-installation-of-otree-in-linux" class="nav-link" data-scroll-target="#regarding-the-installation-of-otree-in-linux"><span class="toc-section-number">1.6.2</span>  Regarding the installation of oTree in Linux</a></li>
   </ul></li>
-  <li><a href="#otree-setup" id="toc-otree-setup" class="nav-link" data-scroll-target="#otree-setup"><span class="toc-section-number">1.6</span>  oTree setup</a></li>
+  <li><a href="#otree-setup" id="toc-otree-setup" class="nav-link" data-scroll-target="#otree-setup"><span class="toc-section-number">1.7</span>  oTree setup</a></li>
   </ul>
 </nav>
     </div>
@@ -287,8 +289,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.</li>
 </ul>
 </section>
-<section id="install-otree" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="install-otree"><span class="header-section-number">1.5</span> Install oTree</h2>
+<section id="github" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="github"><span class="header-section-number">1.5</span> GitHub</h2>
+<p>Make sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code.</p>
+</section>
+<section id="install-otree" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="install-otree"><span class="header-section-number">1.6</span> Install oTree</h2>
 <ul>
 <li>oTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:</li>
 </ul>
@@ -297,34 +303,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>You can install oTree in your computer by using the terminal in Pycharm as well.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip3 install otree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="upgradingreinstalling-otree" class="level3" data-number="1.5.1">
-<h3 data-number="1.5.1" class="anchored" data-anchor-id="upgradingreinstalling-otree"><span class="header-section-number">1.5.1</span> Upgrading/reinstalling oTree</h3>
+<section id="upgradingreinstalling-otree" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="upgradingreinstalling-otree"><span class="header-section-number">1.6.1</span> Upgrading/reinstalling oTree</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pip3 install -U otree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Recommend upgrading every couple of weeks.</li>
 </ul>
 </section>
+<section id="regarding-the-installation-of-otree-in-linux" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="regarding-the-installation-of-otree-in-linux"><span class="header-section-number">1.6.2</span> Regarding the installation of oTree in Linux</h3>
+<ul>
+<li><p>You might need to do the proxy server settings</p></li>
+<li><p>In the Pycharm, you can open the terminal and install oTree as below:</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>set https_proxy http://proxy.noc.kochi-tech.ac.jp:3128</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pip install otree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="otree-setup" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="otree-setup"><span class="header-section-number">1.6</span> oTree setup</h2>
+</section>
+<section id="otree-setup" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="otree-setup"><span class="header-section-number">1.7</span> oTree setup</h2>
 <ul>
 <li>From your command prompt, create your <strong>IGG</strong> project</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>otree startproject IGG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>otree startproject IGG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Move into the folder you just created</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cd IGG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cd IGG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Run the server</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>otree devserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>otree devserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Open your browser to http://localhost:8000/. You should see the oTree demo site.</p></li>
 <li><p>To stop the server, press <strong>Control+C</strong> at your command line.</p></li>
 <li><p>To create a new app, run</p></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>otree startapp app_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>otree startapp app_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Session configs are defined in <strong>settings.py</strong></li>
 </ul>

@@ -31,6 +31,11 @@ recommend you to use PyCharm if you want to further customize your oTree app by 
 
 - Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.
 
+## GitHub
+
+Make sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code.
+
+
 ## Install oTree
 
 - oTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:
@@ -52,6 +57,17 @@ pip3 install -U otree
 ```
 
 - Recommend upgrading every couple of weeks.
+
+### Regarding the installation of oTree in Linux 
+
+- You might need to do the proxy server settings
+
+- In the Pycharm, you can open the terminal and install oTree as below:
+
+```default
+set https_proxy http://proxy.noc.kochi-tech.ac.jp:3128
+pip install otree
+```
 
 ## oTree setup
 
