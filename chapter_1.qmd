@@ -60,7 +60,7 @@ pip3 install -U otree
 - In the Pycharm, you can open the terminal and install oTree as below:
 
 ```default
-set https_proxy http://proxy.noc.kochi-tech.ac.jp:3128
+set https_proxy address:password
 pip install otree
 ```
 

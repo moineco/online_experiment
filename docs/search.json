@@ -39,7 +39,7 @@
     "href": "chapter_1.html#install-otree",
     "title": "1  Installation and environments",
     "section": "1.5 Install oTree",
-    "text": "1.5 Install oTree\n\noTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:\n\npip3 install otree\n\nYou can install oTree in your computer by using the terminal in Pycharm as well.\n\npip3 install otree\n\n1.5.1 Upgrading/reinstalling oTree\npip3 install -U otree\n\nRecommend upgrading every couple of weeks.\n\n\n\n1.5.2 Regarding the installation of oTree in Linux\n\nYou might need to do the proxy server settings\nIn the Pycharm, you can open the terminal and install oTree as below:\n\nset https_proxy http://proxy.noc.kochi-tech.ac.jp:3128\npip install otree"
+    "text": "1.5 Install oTree\n\noTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:\n\npip3 install otree\n\nYou can install oTree in your computer by using the terminal in Pycharm as well.\n\npip3 install otree\n\n1.5.1 Upgrading/reinstalling oTree\npip3 install -U otree\n\nRecommend upgrading every couple of weeks.\n\n\n\n1.5.2 Regarding the installation of oTree in Linux\n\nYou might need to do the proxy server settings\nIn the Pycharm, you can open the terminal and install oTree as below:\n\nset https_proxy address:password\npip install otree"
   },
   {
     "objectID": "chapter_1.html#otree-setup",
