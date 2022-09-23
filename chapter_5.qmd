@@ -1,4 +1,4 @@
-# On Heroku from oTree
+# On heroku from oTree
 
 Heroku is a website hosting service where you can easily host your oTree application and open access to the public.
 

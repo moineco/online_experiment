@@ -1,4 +1,4 @@
-# Pycharm to customize oTree Studio project
+# Pycharm to customize oTree studio project
 
 oTree Studio is a point-and-click interface for building oTree apps. It is free to use for small/medium sized projects.
 

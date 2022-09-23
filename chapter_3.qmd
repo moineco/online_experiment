@@ -1,4 +1,4 @@
-# The Building Blocks of oTree
+# The building blocks of oTree
 
 Once you have installed oTree and created an app you are ready to build your own experiment. If you examine an experiment, you will see that from a programming-perspective an experiment consists of some things. These can be seen as the four building blocks of oTree.
 
@@ -14,7 +14,7 @@ In **Models.py** you define the variables that will be stored in your data-outpu
 age = models.IntegerField(label="What is your age?")
 ```
 
-Here, a model is a database table and a field is one column within that table. In this case, an IntegerField is used, indicating that only integer numbers are valid. The label determines the text that is shown to participants next to the variable. There are six stringfields that you can use:
+Here, a model is a database table and a field is one column within that table. In this case, an *IntegerField* is used, indicating that only integer numbers are valid. The label determines the text that is shown to participants next to the variable. There are six *StringField* that you can use:
 
 - *IntegerField* for integer numbers
 
@@ -31,7 +31,7 @@ Here, a model is a database table and a field is one column within that table. I
 
 3. **Pages.py**
 
-In **Pages.py** you define every page that is shown to participants and specify which variables are allocated to that page. For instance:
+In *Pages.py* you define every page that is shown to participants and specify which variables are allocated to that page. For instance:
 
 ```default
 class Instructions(Page):
@@ -49,7 +49,7 @@ Moreover, there are a battery of functions that can be used to specify condition
 
 4. **Settings.py**
 
-The last building block of oTree is Settings.py. Here you define some overarching settings of your oTree project, such as the language used, the currency used, your admin username and password, how experimental currency translates to real-world currency, and the apps that are available. For the latter, if you have an app called attribute_substitution. You can make it available in your oTree server by typing:
+The last building block of oTree is *Settings.py*. Here you define some overarching settings of your oTree project, such as the language used, the currency used, your admin username and password, how experimental currency translates to real-world currency, and the apps that are available. For the latter, if you have an app called attribute_substitution. You can make it available in your oTree server by typing:
 
 ```default
 SESSION_CONFIGS = [
