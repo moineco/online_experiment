@@ -1,1 +1,1 @@
-# Experiment 3 with oTree
+# Settings.py
