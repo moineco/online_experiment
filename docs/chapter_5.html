@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Behavorial Experiments with oTree and Python - 5&nbsp; On heroku from oTree</title>
+<title>Behavorial Experiments with oTree and Python - 5&nbsp; On Heroku from oTree</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -70,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">On heroku from oTree</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">On Heroku from oTree</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">On heroku from oTree</span></a>
+  <a href="./chapter_5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">On Heroku from oTree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -162,7 +225,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#connecting-otree-to-heroku" id="toc-connecting-otree-to-heroku" class="nav-link active" data-scroll-target="#connecting-otree-to-heroku"><span class="toc-section-number">5.1</span>  Connecting oTree to Heroku</a></li>
+  <li><a href="#connecting-otree-to-heroku" id="toc-connecting-otree-to-heroku" class="nav-link active" data-scroll-target="#connecting-otree-to-heroku"><span class="toc-section-number">5.1</span>  Connecting oTree to Heroku</a>
+  <ul class="collapse">
+  <li><a href="#otree-hub" id="toc-otree-hub" class="nav-link" data-scroll-target="#otree-hub"><span class="toc-section-number">5.1.1</span>  <strong>oTree Hub</strong></a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github"><span class="toc-section-number">5.1.2</span>  <strong>GitHub</strong></a></li>
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><span class="toc-section-number">5.1.3</span>  <strong>Terminal</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -171,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">On heroku from oTree</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">On Heroku from oTree</span></h1>
 </div>
 
 
@@ -185,19 +253,65 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Heroku is a website hosting service where you can easily host your oTree application and open access to the public.</p>
-<ul>
-<li>Go to your Heroku dashboard and click “Create new app”.</li>
-</ul>
+<p>In order to make the oTree instance accessible globally, a server is needed. We use Heroku which is a cloud hosting server that provides a platform for apps where you can easily host your oTree application and open access to the public.</p>
+<p>If you run an experiment with a substantial number of participants, you must upgrade to a paid server. As you can immediately scale the server capacity it is not expensive to use. For instance, if you run your experiment in the timeframe of three days, you only pay 3/30th of the monthly fees as you scale it up before you use it and scale it down after you use it. After you have created an account on Heroku, download and install the <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a>. After installing the Heroku Command Line Interface (CLI), there are three ways to deploy experiments to Heroku:</p>
+<ol type="1">
+<li>oTree Hub</li>
+<li>GitHub</li>
+<li>Terminal</li>
+</ol>
 <section id="connecting-otree-to-heroku" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="connecting-otree-to-heroku"><span class="header-section-number">5.1</span> Connecting oTree to Heroku</h2>
+<section id="otree-hub" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="otree-hub"><span class="header-section-number">5.1.1</span> <strong>oTree Hub</strong></h3>
+<p>oTree Hub is the easiest way and requires least coding. However, convenience comes at a cost as you can have limited free project space and everything you deploy using oTree Hub becomes publicly available immediately, unless you pay.</p>
+</section>
+<section id="github" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="github"><span class="header-section-number">5.1.2</span> <strong>GitHub</strong></h3>
+<p>GitHub also does not require programming and you can even auto-deploy your experiment every time you commit changes to GitHub. If you have a GitHub account, you can integrate this with Heroku. In Heroku, create an app and click on “Deploy”. Here, you can authorize Heroku to access your GitHub repositories. After authorizing Heroku, you can search for your GitHub repository and connect it to Heroku. You can either manually deploy your GitHub repository to Heroku or automatically deploy all pushes you make to GitHub. If you add new variables in your experiment, you should reset the database in Heroku by using the following code in the Command Prompt.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>heroku login</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>heroku run "otree resetdb" --app your_appname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="terminal" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="terminal"><span class="header-section-number">5.1.3</span> <strong>Terminal</strong></h3>
+<p>You can use the command line (or Terminal for iOS users) to deploy your experiment to Heroku. In this case, you do not need any third-party software except Heroku. To use the command prompt you need to follow the following steps:</p>
 <ul>
-<li><p>oTree Hub</p></li>
-<li><p>GitHub</p></li>
-<li><p>Command Prompt</p></li>
+<li>Locate the project root folder (particular oTree instance).</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd '/Users/Name/Folder/'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>If you have created a Heroku account, use the following command. If you do not have a Heroku account yet, you can create one here.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>heroku login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>If the above command does not work, you probably have not installed Heroku CLI properly.</p></li>
+<li><p>Then, you can create a new Heroku-app, if you don’t have one yet.</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>heroku create your_appname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Since you are already in the project root folder you can create the .git here.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>git init</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>heroku git:remote -a your_appname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>You can push your code locally to Heroku. Finally push the local repository to the Heroku server.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>git push heroku master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>In order to view the Heroku app, enter the following command or enter the URL in your browser.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>heroku open</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>If you add new variables in the models.py, you should reset the database in Heroku.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>heroku login</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>heroku run "otree reset db" --APP your_appname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Or do it manually in the Heroku app, simlarly to the way described earlier.</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

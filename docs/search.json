@@ -100,9 +100,16 @@
   {
     "objectID": "chapter_5.html",
     "href": "chapter_5.html",
-    "title": "5  On heroku from oTree",
+    "title": "5  On Heroku from oTree",
     "section": "",
-    "text": "Heroku is a website hosting service where you can easily host your oTree application and open access to the public."
+    "text": "In order to make the oTree instance accessible globally, a server is needed. We use Heroku which is a cloud hosting server that provides a platform for apps where you can easily host your oTree application and open access to the public.\nIf you run an experiment with a substantial number of participants, you must upgrade to a paid server. As you can immediately scale the server capacity it is not expensive to use. For instance, if you run your experiment in the timeframe of three days, you only pay 3/30th of the monthly fees as you scale it up before you use it and scale it down after you use it. After you have created an account on Heroku, download and install the Heroku CLI. After installing the Heroku Command Line Interface (CLI), there are three ways to deploy experiments to Heroku:"
+  },
+  {
+    "objectID": "chapter_5.html#connecting-otree-to-heroku",
+    "href": "chapter_5.html#connecting-otree-to-heroku",
+    "title": "5  On Heroku from oTree",
+    "section": "5.1 Connecting oTree to Heroku",
+    "text": "5.1 Connecting oTree to Heroku\n\n5.1.1 oTree Hub\noTree Hub is the easiest way and requires least coding. However, convenience comes at a cost as you can have limited free project space and everything you deploy using oTree Hub becomes publicly available immediately, unless you pay.\n\n\n5.1.2 GitHub\nGitHub also does not require programming and you can even auto-deploy your experiment every time you commit changes to GitHub. If you have a GitHub account, you can integrate this with Heroku. In Heroku, create an app and click on “Deploy”. Here, you can authorize Heroku to access your GitHub repositories. After authorizing Heroku, you can search for your GitHub repository and connect it to Heroku. You can either manually deploy your GitHub repository to Heroku or automatically deploy all pushes you make to GitHub. If you add new variables in your experiment, you should reset the database in Heroku by using the following code in the Command Prompt.\nheroku login\nheroku run \"otree resetdb\" --app your_appname\n\n\n5.1.3 Terminal\nYou can use the command line (or Terminal for iOS users) to deploy your experiment to Heroku. In this case, you do not need any third-party software except Heroku. To use the command prompt you need to follow the following steps:\n\nLocate the project root folder (particular oTree instance).\n\ncd '/Users/Name/Folder/'\n\nIf you have created a Heroku account, use the following command. If you do not have a Heroku account yet, you can create one here.\n\nheroku login\n\nIf the above command does not work, you probably have not installed Heroku CLI properly.\nThen, you can create a new Heroku-app, if you don’t have one yet.\n\nheroku create your_appname\n\nSince you are already in the project root folder you can create the .git here.\n\ngit init\nheroku git:remote -a your_appname\n\nYou can push your code locally to Heroku. Finally push the local repository to the Heroku server.\n\ngit push heroku master\n\nIn order to view the Heroku app, enter the following command or enter the URL in your browser.\n\nheroku open\n\nIf you add new variables in the models.py, you should reset the database in Heroku.\n\nheroku login\nheroku run \"otree reset db\" --APP your_appname\n\nOr do it manually in the Heroku app, simlarly to the way described earlier."
   },
   {
     "objectID": "chapter_6.html",
@@ -110,12 +117,5 @@
     "title": "6  Basic survey by using oTree",
     "section": "",
     "text": "- Introduction.html\n- Survey1.html\n- Survey2.html\n- Survey3.html\n- Demographics.html\nThe questionnaire always starts with Introduction.html, and always ends with a Demographics.html.Between these two pages, the application randomizes other pages included under templates as “Survey.html”. The order of items and questions on every page are also randomized. The questionnaire also includes a progress bar."
-  },
-  {
-    "objectID": "chapter_5.html#connecting-otree-to-heroku",
-    "href": "chapter_5.html#connecting-otree-to-heroku",
-    "title": "5  On heroku from oTree",
-    "section": "5.1 Connecting oTree to Heroku",
-    "text": "5.1 Connecting oTree to Heroku\n\noTree Hub\nGitHub\nCommand Prompt"
   }
 ]
