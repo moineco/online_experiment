@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Behavorial Experiments with oTree and Python - 3&nbsp; Building blocks of apps in oTree</title>
+<title>Behavorial Experiments with oTree and Python - 3&nbsp; The Building Blocks of oTree</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Building blocks of apps in oTree</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Building Blocks of oTree</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -173,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Building blocks of apps in oTree</span></a>
+  <a href="./chapter_3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Building Blocks of oTree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -221,27 +221,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#app-structure" id="toc-app-structure" class="nav-link active" data-scroll-target="#app-structure"><span class="toc-section-number">3.1</span>  App structure</a></li>
-  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"><span class="toc-section-number">3.2</span>  Building blocks</a>
-  <ul class="collapse">
-  <li><a href="#init.py" id="toc-init.py" class="nav-link" data-scroll-target="#init.py"><span class="toc-section-number">3.2.1</span>  init.py</a></li>
-  <li><a href="#templates" id="toc-templates" class="nav-link" data-scroll-target="#templates"><span class="toc-section-number">3.2.2</span>  Templates</a></li>
-  <li><a href="#settings.py" id="toc-settings.py" class="nav-link" data-scroll-target="#settings.py"><span class="toc-section-number">3.2.3</span>  Settings.py</a></li>
-  </ul></li>
-  <li><a href="#init.py-1" id="toc-init.py-1" class="nav-link" data-scroll-target="#init.py-1"><span class="toc-section-number">3.3</span>  init.py</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Building blocks of apps in oTree</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Building Blocks of oTree</span></h1>
 </div>
 
 
@@ -255,90 +242,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="app-structure" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="app-structure"><span class="header-section-number">3.1</span> App structure</h2>
+<p>Once you have installed oTree and created an app you are ready to build your own experiment.</p>
+<p>If you examine an experiment, you will see that from a programming-perspective an experiment consists of some things. These can be seen as the four building blocks of oTree.</p>
 <ol type="1">
-<li>To create an application named <strong>game_app</strong> move to the oTree folder</li>
+<li><strong>Templates</strong></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cd oTree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first building block are the templates: every page in an experiment is a template with a certain lay-out and text. Templates are .html files in which you can use HTML, CSS, Javascript, and Django.</p>
 <ol start="2" type="1">
-<li>Create the application</li>
+<li><strong>Models.py</strong></li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>otree startapp game_app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Models.py you define the variables that will be stored in your data-output. For instance, if you want to ask the age of a participant you create a variable:</p>
+<blockquote class="blockquote">
+<p>age = models.IntegerField(label=“What is your age?”)</p>
+</blockquote>
+<p>Here, a model is a database table and a field is one column within that table. In this case, an IntegerField is used, indicating that only integer numbers are valid. The label determines the text that is shown to participants next to the variable. There are six stringfields that you can use:</p>
+<ul>
+<li><p><em>IntegerField</em> for integer numbers</p></li>
+<li><p><em>FloatField</em> for numbers that may include decimals</p></li>
+<li><p><em>StringField</em> for strings of text</p></li>
+<li><p><em>LongStringField</em> for long strings of text</p></li>
+<li><p><em>BooleanField</em> for True/False values</p></li>
+<li><p><em>CurrencyField</em> for currency amounts</p></li>
+</ul>
 <ol start="3" type="1">
-<li><p>Move to the folder <strong>game_app</strong></p></li>
-<li><p>In this folder, you will find the following files as default</p></li>
-<li><p>In this folder, you will also find a sub folder</p></li>
+<li><strong>Pages.py</strong></li>
 </ol>
-<ul>
-<li><p>templates/game_app</p>
-<ul>
-<li><p>Mypage.html</p></li>
-<li><p>Results.html</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="building-blocks" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="building-blocks"><span class="header-section-number">3.2</span> Building blocks</h2>
-<section id="init.py" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="init.py"><span class="header-section-number">3.2.1</span> init.py</h3>
-<ul>
-<li>Used to define every variable that you use in your experimet.</li>
-<li>Used to determine what is showed, when,and how long</li>
-</ul>
-</section>
-<section id="templates" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="templates"><span class="header-section-number">3.2.2</span> Templates</h3>
-<ul>
-<li>Every page in your experiment is a template with text and layout</li>
-</ul>
-</section>
-<section id="settings.py" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="settings.py"><span class="header-section-number">3.2.3</span> Settings.py</h3>
-<ul>
-<li>Used to determine payoff structure and general application setting</li>
-</ul>
-</section>
-</section>
-<section id="init.py-1" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="init.py-1"><span class="header-section-number">3.3</span> init.py</h2>
-<ol type="1">
-<li><p>class Subsession(BaseSubsession):</p>
-<ul>
-<li>pass</li>
-</ul></li>
-<li><p>class Group(BaseGroup):</p>
-<ul>
-<li>pass</li>
-</ul></li>
-<li><p>class Player(BasePlayer):</p>
-<ul>
-<li>pass</li>
-</ul></li>
+<p>In Pages.py you define every page that is shown to participants and specify which variables are allocated to that page. For instance:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>class Instructions(Page):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    form_model = 'player'</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    form_fields = ['Comprehension1', 'Comprehension2']</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here, Instructions is the name of the page, and form_model refers to the level at which the variables should be stored. form_fields includes a list of variables that can be elicited on the page. In this case, we include two comprehension checks that are further defined in Models.py. Next to defining and specifying variables for every page, Pages.py is also used to determine the page sequence.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>page_sequence = [Instructions, Main_Page, Results]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Moreover, there are a battery of functions that can be used to specify conditions for each page. For example, the is_displayed() function determines conditions to which participants the page is displayed.</p>
+<ol start="4" type="1">
+<li><strong>Settings.py</strong></li>
 </ol>
-<ul>
-<li><p>Pages that the participants see are defined in pages.py</p>
-<p>Logic for how to display the HTML templates</p>
-<p>when, how, and what to display</p></li>
-<li><p>page_sequence gives the order of pages</p>
-<p>If there are multiple rounds the sequence is repeated</p></li>
-</ul>
-<p>For instance,</p>
-<ol type="1">
-<li><p>class MyPage(Page):</p>
-<p>pass</p></li>
-<li><p>class ResultsWaitPage(WaitPage):</p>
-<p>def after_all_players_arrive(self):</p>
-<p>pass</p></li>
-<li><p>class Results(Page):</p>
-<p>pass</p></li>
-</ol>
-<ul>
-<li>page_sequence = [MyPage, ResultsWaitPage, Results]</li>
-</ul>
+<p>The last building block of oTree is Settings.py. Here you define some overarching settings of your oTree project, such as the language used, the currency used, your admin username and password, how experimental currency translates to real-world currency, and the apps that are available. For the latter, if you have an app called attribute_substitution. You can make it available in your oTree server by typing:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SESSION_CONFIGS = [</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    dict(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       name='attribute_substitution',</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       display_name="Attribute Substitution Game",</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       num_demo_participants=3,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       app_sequence=['attribute_substitution']</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here, the name and display name are whatever you prefer (for name you cannot use spaces). The number of demo participants is the number of slots available to play a demo version of the experiment. The most important thing here is the app_sequence. In the app_sequence you define the sequence of apps that is displayed to participants. Suppose that you want to combine the attribute_substitution app with a public goods game or a survey, you can add, public_goods or survey, respectively.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

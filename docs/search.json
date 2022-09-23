@@ -65,21 +65,21 @@
   {
     "objectID": "chapter_3.html",
     "href": "chapter_3.html",
-    "title": "3  Building blocks of apps in oTree",
+    "title": "3  The Building Blocks of oTree",
     "section": "",
-    "text": "To create an application named game_app move to the oTree folder\n\ncd oTree\n\nCreate the application\n\notree startapp game_app\n\nMove to the folder game_app\nIn this folder, you will find the following files as default\nIn this folder, you will also find a sub folder\n\n\ntemplates/game_app\n\nMypage.html\nResults.html"
+    "text": "If you examine an experiment, you will see that from a programming-perspective an experiment consists of some things. These can be seen as the four building blocks of oTree.\n\nTemplates\n\nThe first building block are the templates: every page in an experiment is a template with a certain lay-out and text. Templates are .html files in which you can use HTML, CSS, Javascript, and Django.\n\nModels.py\n\nIn Models.py you define the variables that will be stored in your data-output. For instance, if you want to ask the age of a participant you create a variable:\n\nage = models.IntegerField(label=“What is your age?”)\n\nHere, a model is a database table and a field is one column within that table. In this case, an IntegerField is used, indicating that only integer numbers are valid. The label determines the text that is shown to participants next to the variable. There are six stringfields that you can use:\n\nIntegerField for integer numbers\nFloatField for numbers that may include decimals\nStringField for strings of text\nLongStringField for long strings of text\nBooleanField for True/False values\nCurrencyField for currency amounts\n\n\nPages.py\n\nIn Pages.py you define every page that is shown to participants and specify which variables are allocated to that page. For instance:\nclass Instructions(Page):\n    form_model = 'player'\n    form_fields = ['Comprehension1', 'Comprehension2']\nHere, Instructions is the name of the page, and form_model refers to the level at which the variables should be stored. form_fields includes a list of variables that can be elicited on the page. In this case, we include two comprehension checks that are further defined in Models.py. Next to defining and specifying variables for every page, Pages.py is also used to determine the page sequence.\npage_sequence = [Instructions, Main_Page, Results]\nMoreover, there are a battery of functions that can be used to specify conditions for each page. For example, the is_displayed() function determines conditions to which participants the page is displayed.\n\nSettings.py\n\nThe last building block of oTree is Settings.py. Here you define some overarching settings of your oTree project, such as the language used, the currency used, your admin username and password, how experimental currency translates to real-world currency, and the apps that are available. For the latter, if you have an app called attribute_substitution. You can make it available in your oTree server by typing:\nSESSION_CONFIGS = [\n    dict(\n       name='attribute_substitution',\n       display_name=\"Attribute Substitution Game\",\n       num_demo_participants=3,\n       app_sequence=['attribute_substitution']\n    ),\n]\nHere, the name and display name are whatever you prefer (for name you cannot use spaces). The number of demo participants is the number of slots available to play a demo version of the experiment. The most important thing here is the app_sequence. In the app_sequence you define the sequence of apps that is displayed to participants. Suppose that you want to combine the attribute_substitution app with a public goods game or a survey, you can add, public_goods or survey, respectively."
   },
   {
     "objectID": "chapter_3.html#building-blocks",
     "href": "chapter_3.html#building-blocks",
-    "title": "3  Building blocks of apps in oTree",
+    "title": "3  The Building Blocks of oTree",
     "section": "3.2 Building blocks",
     "text": "3.2 Building blocks\n\n3.2.1 init.py\n\nUsed to define every variable that you use in your experimet.\nUsed to determine what is showed, when,and how long\n\n\n\n3.2.2 Templates\n\nEvery page in your experiment is a template with text and layout\n\n\n\n3.2.3 Settings.py\n\nUsed to determine payoff structure and general application setting"
   },
   {
     "objectID": "chapter_3.html#init.py-1",
     "href": "chapter_3.html#init.py-1",
-    "title": "3  Building blocks of apps in oTree",
+    "title": "3  The Building Blocks of oTree",
     "section": "3.3 init.py",
     "text": "3.3 init.py\n\nclass Subsession(BaseSubsession):\n\npass\n\nclass Group(BaseGroup):\n\npass\n\nclass Player(BasePlayer):\n\npass\n\n\n\nPages that the participants see are defined in pages.py\nLogic for how to display the HTML templates\nwhen, how, and what to display\npage_sequence gives the order of pages\nIf there are multiple rounds the sequence is repeated\n\nFor instance,\n\nclass MyPage(Page):\npass\nclass ResultsWaitPage(WaitPage):\ndef after_all_players_arrive(self):\npass\nclass Results(Page):\npass\n\n\npage_sequence = [MyPage, ResultsWaitPage, Results]"
   },
@@ -124,5 +124,12 @@
     "title": "6  Basic survey by using oTree",
     "section": "",
     "text": "- Introduction.html\n- Survey1.html\n- Survey2.html\n- Survey3.html\n- Demographics.html\nThe questionnaire always starts with Introduction.html, and always ends with a Demographics.html.Between these two pages, the application randomizes other pages included under templates as “Survey.html”. The order of items and questions on every page are also randomized. The questionnaire also includes a progress bar."
+  },
+  {
+    "objectID": "chapter_3.html#app-structure",
+    "href": "chapter_3.html#app-structure",
+    "title": "3  The Building Blocks of oTree",
+    "section": "3.1 App structure",
+    "text": "3.1 App structure\n\nTo create an application named game_app move to the oTree folder\n\ncd oTree\n\nCreate the application\n\notree startapp game_app\n\nMove to the folder game_app\nIn this folder, you will find the following files as default\nIn this folder, you will also find a sub folder\n\n\ntemplates/game_app\n\nMypage.html\nResults.html"
   }
 ]

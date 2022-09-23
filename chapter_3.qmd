@@ -1,85 +1,67 @@
-# Building blocks of apps in oTree
+# The Building Blocks of oTree
 
-## App structure
+Once you have installed oTree and created an app you are ready to build your own experiment.
 
-1.  To create an application named **game_app** move to the oTree folder
+If you examine an experiment, you will see that from a programming-perspective an experiment consists of some things. These can be seen as the four building blocks of oTree.
+
+1. **Templates**
+
+The first building block are the templates: every page in an experiment is a template with a certain lay-out and text. Templates are .html files in which you can use HTML, CSS, Javascript, and Django. 
+
+2. **Models.py**
+
+In Models.py you define the variables that will be stored in your data-output. For instance, if you want to ask the age of a participant you create a variable:
+
+> age = models.IntegerField(label="What is your age?")
+
+Here, a model is a database table and a field is one column within that table. In this case, an IntegerField is used, indicating that only integer numbers are valid. The label determines the text that is shown to participants next to the variable. There are six stringfields that you can use:
+
+- *IntegerField* for integer numbers
+
+- *FloatField* for numbers that may include decimals
+
+- *StringField* for strings of text
+
+- *LongStringField* for long strings of text
+
+- *BooleanField* for True/False values
+
+- *CurrencyField* for currency amounts
+
+
+3. **Pages.py**
+
+In Pages.py you define every page that is shown to participants and specify which variables are allocated to that page. For instance:
 
 ```default
-cd oTree
+class Instructions(Page):
+    form_model = 'player'
+    form_fields = ['Comprehension1', 'Comprehension2']
 ```
 
-2.  Create the application
+Here, Instructions is the name of the page, and form_model refers to the level at which the variables should be stored. form_fields includes a list of variables that can be elicited on the page. In this case, we include two comprehension checks that are further defined in Models.py. Next to defining and specifying variables for every page, Pages.py is also used to determine the page sequence.
 
 ```default
-otree startapp game_app
+page_sequence = [Instructions, Main_Page, Results]
 ```
 
-3.  Move to the folder **game_app**
+Moreover, there are a battery of functions that can be used to specify conditions for each page. For example, the is_displayed() function determines conditions to which participants the page is displayed. 
 
-4.  In this folder, you will find the following files as default
+4. **Settings.py**
 
-5.  In this folder, you will also find a sub folder
+The last building block of oTree is Settings.py. Here you define some overarching settings of your oTree project, such as the language used, the currency used, your admin username and password, how experimental currency translates to real-world currency, and the apps that are available. For the latter, if you have an app called attribute_substitution. You can make it available in your oTree server by typing:
 
--   templates/game_app
+```default
+SESSION_CONFIGS = [
+    dict(
+       name='attribute_substitution',
+       display_name="Attribute Substitution Game",
+       num_demo_participants=3,
+       app_sequence=['attribute_substitution']
+    ),
+]
+```
 
-    -   Mypage.html
-
-    -   Results.html
+Here, the name and display name are whatever you prefer (for name you cannot use spaces). The number of demo participants is the number of slots available to play a demo version of the experiment. The most important thing here is the app_sequence. In the app_sequence you define the sequence of apps that is displayed to participants. Suppose that you want to combine the attribute_substitution app with a public goods game or a survey, you can add, public_goods or survey, respectively.
 
 
-## Building blocks
-
-### init.py  
-
-- Used to define every variable that you use in your experimet. 
-- Used to determine what is showed, when,and how long
-
-### Templates 
-
-- Every page in your experiment is a template with text and layout
-
-### Settings.py 
-
-- Used to determine payoff structure and general application setting
-
-## init.py
-
-1.  class Subsession(BaseSubsession):
-
-    -   pass
-
-2.  class Group(BaseGroup):
-
-    -   pass
-
-3.  class Player(BasePlayer):
-
-    -   pass
-
--   Pages that the participants see are defined in pages.py
-
-    Logic for how to display the HTML templates
-
-    when, how, and what to display
-
--   page_sequence gives the order of pages
-
-    If there are multiple rounds the sequence is repeated
-
-For instance,
-
-1.  class MyPage(Page):
-
-    pass
-
-2.  class ResultsWaitPage(WaitPage):
-
-    def after_all_players_arrive(self):
-
-    pass
-
-3.  class Results(Page):
-
-    pass
-
--   page_sequence = \[MyPage, ResultsWaitPage, Results\]
