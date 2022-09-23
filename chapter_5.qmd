@@ -3,3 +3,12 @@
 Heroku is a website hosting service where you can easily host your oTree application and open access to the public.
 
 - Go to your Heroku dashboard and click “Create new app”.
+
+
+## Connecting oTree to Heroku
+
+- oTree Hub
+
+- GitHub
+
+- Command Prompt

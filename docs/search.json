@@ -102,7 +102,7 @@
     "href": "chapter_5.html",
     "title": "5  On heroku from oTree",
     "section": "",
-    "text": "Go to your Heroku dashboard and click “Create new app”."
+    "text": "Heroku is a website hosting service where you can easily host your oTree application and open access to the public."
   },
   {
     "objectID": "chapter_6.html",
@@ -110,5 +110,12 @@
     "title": "6  Basic survey by using oTree",
     "section": "",
     "text": "- Introduction.html\n- Survey1.html\n- Survey2.html\n- Survey3.html\n- Demographics.html\nThe questionnaire always starts with Introduction.html, and always ends with a Demographics.html.Between these two pages, the application randomizes other pages included under templates as “Survey.html”. The order of items and questions on every page are also randomized. The questionnaire also includes a progress bar."
+  },
+  {
+    "objectID": "chapter_5.html#connecting-otree-to-heroku",
+    "href": "chapter_5.html#connecting-otree-to-heroku",
+    "title": "5  On heroku from oTree",
+    "section": "5.1 Connecting oTree to Heroku",
+    "text": "5.1 Connecting oTree to Heroku\n\noTree Hub\nGitHub\nCommand Prompt"
   }
 ]
