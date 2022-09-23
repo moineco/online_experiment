@@ -117,5 +117,12 @@
     "title": "6  Basic survey by using oTree",
     "section": "",
     "text": "- Introduction.html\n- Survey1.html\n- Survey2.html\n- Survey3.html\n- Demographics.html\nThe questionnaire always starts with Introduction.html, and always ends with a Demographics.html.Between these two pages, the application randomizes other pages included under templates as “Survey.html”. The order of items and questions on every page are also randomized. The questionnaire also includes a progress bar."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree—An open-source platform for laboratory, online, and field experiments. Journal of Behavioral and Experimental Finance, 9, 88-97.\nFischbacher, U. (2007). z-Tree: Zurich toolbox for ready-made economic experiments. Experimental Economics, 10, 171-178."
   }
 ]
