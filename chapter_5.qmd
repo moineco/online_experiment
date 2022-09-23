@@ -1,4 +1,4 @@
-# On Heroku from oTree
+# Deploy on Heroku from oTree
 
 In order to make the oTree instance accessible globally, a server is needed. We use Heroku which is a cloud hosting server that provides a platform for apps where you can easily host your oTree application and open access to the public.
 
