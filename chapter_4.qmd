@@ -4,9 +4,7 @@ oTree Studio is a point-and-click interface for building oTree apps. It is free 
 
 ## Create project by oTree Hub
 
-- If you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an account then login.
-
-- <https://www.otreehub.com/accounts/login/?next=/studio/>
+- If you are a new, it is recommended to use oTree Studio to create and edit the project instead of hard coding. Please click this link to register an [oTree Hub](https://www.otreehub.com/accounts/login/?next=/studio/) account then login.
 
 - Click the “+ Project” button to create a new project.
 
