@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Behavioral experiments with oTree and Python",
+    "title": "Social Experiments with oTree and Python",
     "section": "",
     "text": "oTree is an open-source and online software for implementing interactive experiments in the laboratory, online, the field or combinations thereof. The basic experimental setup in oTree consists of (i) an experiment written within oTree, (ii) a server computer, which can be a cloud server or a local laptop and (iii) subjects’ devices with a web browser. oTree creates an experimental session on the server, as well as links for all the participants and the experimenter.\noTree is a framework based on Python that lets you build multiplayer strategy games, like the prisoner’s dilemma, public goods game and many other behavioral experiments in economics, psychology, and related field. This tutorial will use Python to develop the experiment by using oTree software. For Python code generation, we will use Pycharm Professional software."
   },
