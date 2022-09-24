@@ -1,1 +1,3 @@
 # Pages.py
+
+Pages.py for logic of the web pages

@@ -1,2 +1,4 @@
 # Models.py
 
+
+Models.py for calculations, logic of the game

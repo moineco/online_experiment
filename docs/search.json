@@ -117,5 +117,19 @@
     "title": "References",
     "section": "",
     "text": "Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree—An open-source platform for laboratory, online, and field experiments. Journal of Behavioral and Experimental Finance, 9, 88-97.\nFischbacher, U. (2007). z-Tree: Zurich toolbox for ready-made economic experiments. Experimental Economics, 10, 171-178."
+  },
+  {
+    "objectID": "chapter_7.html",
+    "href": "chapter_7.html",
+    "title": "7  Pages.py",
+    "section": "",
+    "text": "Pages.py for logic of the web pages"
+  },
+  {
+    "objectID": "chapter_8.html",
+    "href": "chapter_8.html",
+    "title": "8  Template.html",
+    "section": "",
+    "text": "Templates for web pages that the participant sees, e.g. Instructions, WaitPage, Results participant inputs."
   }
 ]

@@ -1,1 +1,4 @@
 # Template.html
+
+Templates for web pages that the participant sees, e.g. Instructions, WaitPage, Results
+participant inputs.
