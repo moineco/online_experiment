@@ -2,73 +2,71 @@
 
 ## App
 
-- One app can be an experiment or a part of experiment. A project is collection of all different types of App.
+-   One app can be an experiment or a part of experiment. A project is collection of all different types of App.
 
-- If your experiment consist of a prisoner's dilemma game and a survey, then you need to create two apps, one app for prisoners dilemma and another app is for survey.
+-   If your experiment consist of a prisoner's dilemma game and a survey, then you need to create two apps, one app for prisoners dilemma and another app is for survey.
 
-- Later you can combine these two apps and run one session.
+-   Later you can combine these two apps and run one session.
 
-- App is like one experiment and project is like a container of different experiments.
+-   App is like one experiment and project is like a container of different experiments.
 
-- How you structure the projects is up to you. You can choose the sequence.
+-   How you structure the projects is up to you. You can choose the sequence.
 
-- Now if you see the structure of the examples, you can see that there are various different types of folder.
+-   Now if you see the structure of the examples, you can see that there are various different types of folder.
 
-- The following two folders are known as global settings as they are same level of the project
+-   The following two folders are known as global settings as they are same level of the project
 
-> _Static 
- 
-  - Images, sounds, videos
+> \_Static
 
-> _Template
+-   Images, sounds, videos
 
-  - Design how web page look like. If you want a specific style of your webpage, you can include a template
+> \_Template
 
->settings.py 
+-   Design how web page look like. If you want a specific style of your webpage, you can include a template
 
-  - It is also global option. From this setting file, you can change various global options, for instance  Your currency, language, interface 
+> settings.py
 
-  - In this **setting.py** file you will find the session_configs where you can setup the sequence of apps for your project.
+-   It is also global option. From this setting file, you can change various global options, for instance Your currency, language, interface
 
+-   In this **setting.py** file you will find the session_configs where you can setup the sequence of apps for your project.
 
 ## How to create a new app.
 
-- Navigate your working folder by using **cd**
+-   Navigate your working folder by using **cd**
 
-- For instance you are using the project **IGG**. Then use 
+-   For instance you are using the project **IGG**. Then use
 
-```default
+``` default
 cd IGG 
 ```
 
 To navigate in this folder
 
-- Now you can create a new app from the terminal. 
+-   Now you can create a new app from the terminal.
 
 If you want to create a app, name "SVO"
 
-```default
+``` default
 otree startapp SVO
 ```
 
-- You will notice that a new app named "SVO" is listed on your Pycharm
+-   You will notice that a new app named "SVO" is listed on your Pycharm
 
-- If you don’t see a models.py in each folder, that means you are using the new no-self format.
+-   If you don't see a models.py in each folder, that means you are using the new no-self format.
 
-- If you open the app, you can see that it contains three different types of files:
+-   If you open the app, you can see that it contains three different types of files:
 
-    - init.py
-    
-    - MyPage.html
-    
-    - Results.html
+    -   \_init.py
+
+    -   MyPage.html
+
+    -   Results.html
 
 If you open the **init.py** you can find several different class.
 
 You can edit it based on your game. Two most important classes are:
- 
-- class (Constants)
-- class (Player)
+
+-   class (Constants)
+-   class (Player)
 
 Everything we want to analyze and store in data should be stored in Player.
- 
