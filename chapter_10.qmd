@@ -53,8 +53,8 @@ class Group(BaseGroup):
 
 ### Player class definition
 
-Define variables for each player in the Player clas
-.
+- Define variables for each player in the Player class
+
 ```default
 class Player(BasePlayer):
     q_gender = models.CharField(initial=None,
