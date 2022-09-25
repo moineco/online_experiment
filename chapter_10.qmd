@@ -35,7 +35,48 @@ Notes:
 
 - For `num_rounds`, enter "1" to ask only once.
 
-- `names_in_url`, `players_per_group`, `num_rounds` are defined on oTree, so it is not desirable to use them as arbitrary variable names
+- `names_in_url`, `players_per_group`, `num_rounds` are defined on oTree, so it is not desirable to use them as arbitrary variable names.
+
+### Skip class
+
+- Skip subsession
+
+```default
+class Subsession(BaseSubsession):
+    pass
+```
+- Skip group defination
+```default
+class Group(BaseGroup):
+    pass
+```
 
 ### Player class definition
 
+Define variables for each player in the Player clas
+.
+```default
+class Player(BasePlayer):
+    q_gender = models.CharField(initial=None,
+                                choices=['male', 'female', 'no answer'],
+                                verbose_name='What is your gender? ',
+                                widget=widgets.RadioSelect())
+    
+    q_age = models.PositiveIntegerField(verbose_name='What is your age?',
+                                        choices=range(0, 125),
+                                        initial=None)
+    
+    q_prefecture = models.CharField(initial=None,
+                                choices=['Hokkaido', 'Aomori', 'Iwate', 'Miyagi', 'Akita', 'Yamagata', 'Fukushima', 'Ibaraki', 'Tochigi', 'Gunma', 'Saitama', 'Chiba', 'Tokyo', 'Kanagawa', 'Niigata', 'Toyama', 'Ishikawa', 'Fukui', 'Yamanashi', 'Nagano', 'Gifu', 'Shizuoka', 'Aichi', 'Mie', 'Shiga', 'Kyoto', 'Osaka', 'Hyogo', 'Nara', 'Wakayama', 'Tottori', 'Shimane', 'Okayama', 'Hiroshima', 'Yamaguchi', 'Tokushima', 'Kagawa', 'Ehime', 'Kochi', 'Fukuoka', 'Saga', 'Nagasaki', 'Kumamoto', 'Oita', 'Miyazaki', 'Kagoshima', 'Okinawa'],
+                                verbose_name='What area do you live in? ',
+                                widget=forms.Select())
+
+    q_device = models.CharField(initial=None,
+                                choices=['computer',
+                                        'Tablet',
+                                        'smartphone',
+                                        'other than that'
+                                        ],
+                                verbose_name='Which electronic device are you answering this answer on? ',
+                                widget=forms.Select())
+```

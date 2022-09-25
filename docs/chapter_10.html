@@ -234,7 +234,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#create-an-app" id="toc-create-an-app" class="nav-link" data-scroll-target="#create-an-app"><span class="toc-section-number">10.2</span>  Create an app</a>
   <ul class="collapse">
   <li><a href="#defining-the-constants-class-basic-design" id="toc-defining-the-constants-class-basic-design" class="nav-link" data-scroll-target="#defining-the-constants-class-basic-design"><span class="toc-section-number">10.2.1</span>  Defining the Constants class: basic design</a></li>
-  <li><a href="#player-class-definition" id="toc-player-class-definition" class="nav-link" data-scroll-target="#player-class-definition"><span class="toc-section-number">10.2.2</span>  Player class definition</a></li>
+  <li><a href="#skip-class" id="toc-skip-class" class="nav-link" data-scroll-target="#skip-class"><span class="toc-section-number">10.2.2</span>  Skip class</a></li>
+  <li><a href="#player-class-definition" id="toc-player-class-definition" class="nav-link" data-scroll-target="#player-class-definition"><span class="toc-section-number">10.2.3</span>  Player class definition</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -291,11 +292,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>For <code>players_per_group</code>, enter “None” for 1 player.</p></li>
 <li><p>For <code>num_rounds</code>, enter “1” to ask only once.</p></li>
-<li><p><code>names_in_url</code>, <code>players_per_group</code>, <code>num_rounds</code> are defined on oTree, so it is not desirable to use them as arbitrary variable names</p></li>
+<li><p><code>names_in_url</code>, <code>players_per_group</code>, <code>num_rounds</code> are defined on oTree, so it is not desirable to use them as arbitrary variable names.</p></li>
 </ul>
 </section>
-<section id="player-class-definition" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="player-class-definition"><span class="header-section-number">10.2.2</span> Player class definition</h3>
+<section id="skip-class" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="skip-class"><span class="header-section-number">10.2.2</span> Skip class</h3>
+<ul>
+<li>Skip subsession</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>class Subsession(BaseSubsession):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    pass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Skip group defination</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>class Group(BaseGroup):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    pass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="player-class-definition" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="player-class-definition"><span class="header-section-number">10.2.3</span> Player class definition</h3>
+<p>Define variables for each player in the Player clas .</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>class Player(BasePlayer):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    q_gender = models.CharField(initial=None,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                choices=['male', 'female', 'no answer'],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                                verbose_name='What is your gender? ',</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                widget=widgets.RadioSelect())</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    q_age = models.PositiveIntegerField(verbose_name='What is your age?',</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                                        choices=range(0, 125),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                                        initial=None)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    q_prefecture = models.CharField(initial=None,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                                choices=['Hokkaido', 'Aomori', 'Iwate', 'Miyagi', 'Akita', 'Yamagata', 'Fukushima', 'Ibaraki', 'Tochigi', 'Gunma', 'Saitama', 'Chiba', 'Tokyo', 'Kanagawa', 'Niigata', 'Toyama', 'Ishikawa', 'Fukui', 'Yamanashi', 'Nagano', 'Gifu', 'Shizuoka', 'Aichi', 'Mie', 'Shiga', 'Kyoto', 'Osaka', 'Hyogo', 'Nara', 'Wakayama', 'Tottori', 'Shimane', 'Okayama', 'Hiroshima', 'Yamaguchi', 'Tokushima', 'Kagawa', 'Ehime', 'Kochi', 'Fukuoka', 'Saga', 'Nagasaki', 'Kumamoto', 'Oita', 'Miyazaki', 'Kagoshima', 'Okinawa'],</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                                verbose_name='What area do you live in? ',</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                                widget=forms.Select())</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    q_device = models.CharField(initial=None,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                                choices=['computer',</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                                        'Tablet',</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                        'smartphone',</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                                        'other than that'</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                                        ],</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                                verbose_name='Which electronic device are you answering this answer on? ',</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                                widget=forms.Select())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
