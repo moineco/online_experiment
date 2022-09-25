@@ -112,11 +112,18 @@
     "text": "5.1 Connecting oTree to Heroku\n\n5.1.1 oTree Hub\noTree Hub is the easiest way and requires least coding. However, convenience comes at a cost as you can have limited free project space and everything you deploy using oTree Hub becomes publicly available immediately, unless you pay.\n\n\n5.1.2 GitHub\nGitHub also does not require programming and you can even auto-deploy your experiment every time you commit changes to GitHub. If you have a GitHub account, you can integrate this with Heroku. In Heroku, create an app and click on “Deploy”. Here, you can authorize Heroku to access your GitHub repositories. After authorizing Heroku, you can search for your GitHub repository and connect it to Heroku. You can either manually deploy your GitHub repository to Heroku or automatically deploy all pushes you make to GitHub. If you add new variables in your experiment, you should reset the database in Heroku by using the following code in the Command Prompt.\nheroku login\nheroku run \"otree resetdb\" --app your_appname\n\n\n5.1.3 Terminal\nYou can use the command line (or Terminal for iOS users) to deploy your experiment to Heroku. In this case, you do not need any third-party software except Heroku. To use the command prompt you need to follow the following steps:\n\nLocate the project root folder (particular oTree instance).\n\ncd '/Users/Name/Folder/'\n\nIf you have created a Heroku account, use the following command. If you do not have a Heroku account yet, you can create one here.\n\nheroku login\n\nIf the above command does not work, you probably have not installed Heroku CLI properly.\nThen, you can create a new Heroku-app, if you don’t have one yet.\n\nheroku create your_appname\n\nSince you are already in the project root folder you can create the .git here.\n\ngit init\nheroku git:remote -a your_appname\n\nYou can push your code locally to Heroku. Finally push the local repository to the Heroku server.\n\ngit push heroku master\n\nIn order to view the Heroku app, enter the following command or enter the URL in your browser.\n\nheroku open\n\nIf you add new variables in the models.py, you should reset the database in Heroku.\n\nheroku login\nheroku run \"otree reset db\" --APP your_appname\n\nOr do it manually in the Heroku app, simlarly to the way described earlier."
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "chapter_6.html",
+    "href": "chapter_6.html",
+    "title": "6  Models.py",
     "section": "",
-    "text": "Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree—An open-source platform for laboratory, online, and field experiments. Journal of Behavioral and Experimental Finance, 9, 88-97.\nFischbacher, U. (2007). z-Tree: Zurich toolbox for ready-made economic experiments. Experimental Economics, 10, 171-178."
+    "text": "Models.py for calculations, logic of the game. Responsible for processing related to data access. Perform interactions between web apps and databases. In oTree, models.py mainly plays that role. As an image, it deals with “definition of necessary data” and “calculation (logic)”\ndetermine the variables in the experiment"
+  },
+  {
+    "objectID": "chapter_6.html#constants",
+    "href": "chapter_6.html#constants",
+    "title": "6  Models.py",
+    "section": "6.1 Constants",
+    "text": "6.1 Constants\nclass Constants(BaseConstants):\n   name_in_url = 'public_goods_simple'\n   players_per_group = 3\n   num_rounds = 1\n   \n   endowmwnt = c(100)\n   efficiency_factor = 1.8"
   },
   {
     "objectID": "chapter_7.html",
@@ -131,20 +138,6 @@
     "title": "8  Template.html",
     "section": "",
     "text": "Responsible for screen display. The part for creating the web page displayed on the screen. In oTree, each html file in the template folder mainly plays that role. As an image, it shows “How to display data”.\ncreate a screen in html format\n\nWhere to output characters.\nWhere to create the input field.\nWhere to output the calculation results."
-  },
-  {
-    "objectID": "chapter_6.html",
-    "href": "chapter_6.html",
-    "title": "6  Models.py",
-    "section": "",
-    "text": "Models.py for calculations, logic of the game. Responsible for processing related to data access. Perform interactions between web apps and databases. In oTree, models.py mainly plays that role. As an image, it deals with “definition of necessary data” and “calculation (logic)”\ndetermine the variables in the experiment"
-  },
-  {
-    "objectID": "chapter_6.html#constants",
-    "href": "chapter_6.html#constants",
-    "title": "6  Models.py",
-    "section": "6.1 Constants",
-    "text": "6.1 Constants\nclass Constants(BaseConstants):\n   name_in_url = 'public_goods_simple'\n   players_per_group = 3\n   num_rounds = 1\n   \n   endowmwnt = c(100)\n   efficiency_factor = 1.8"
   },
   {
     "objectID": "chapter_9.html",
@@ -166,5 +159,19 @@
     "title": "10  Questionnaire survey with oTree",
     "section": "10.2 Create an app",
     "text": "10.2 Create an app\nCreate a base application\notree startapp questionnaire\n\n10.2.1 Defining the Constants class: basic design\n\nOpen models.py in questionnaire folder\nSet the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.\n\nclass Constants(BaseConstants):\n    name_in_url = 'questionnaire'\n    players_per_group = None \n    num_rounds = 1 \nNotes:\n\nFor players_per_group, enter “None” for 1 player.\nFor num_rounds, enter “1” to ask only once.\nnames_in_url, players_per_group, num_rounds are defined on oTree, so it is not desirable to use them as arbitrary variable names\n\n\n\n10.2.2 Player class definition"
+  },
+  {
+    "objectID": "chapter_11.html",
+    "href": "chapter_11.html",
+    "title": "11  Conclusion",
+    "section": "",
+    "text": "It’s easier to understand if you think about the program while thinking about this\n\nhow many players?\nWhat are the variables that affect everyone?\nWhat variables are determined by individual players?\nHow many pages to create?\nWhat kind of page transition is performed?"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree—An open-source platform for laboratory, online, and field experiments. Journal of Behavioral and Experimental Finance, 9, 88-97.\nFischbacher, U. (2007). z-Tree: Zurich toolbox for ready-made economic experiments. Experimental Economics, 10, 171-178."
   }
 ]
