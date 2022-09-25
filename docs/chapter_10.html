@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Experiments with oTree and Python - 10&nbsp; Conclusion</title>
+<title>Social Experiments with oTree and Python - 10&nbsp; Questionnaire survey with oTree</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -30,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./chapter_11.html" rel="next">
 <link href="./chapter_9.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Questionnaire survey with oTree</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -145,7 +208,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_10.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></a>
+  <a href="./chapter_10.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Questionnaire survey with oTree</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusion</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -162,7 +230,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#otree-organizing-idea" id="toc-otree-organizing-idea" class="nav-link active" data-scroll-target="#otree-organizing-idea"><span class="toc-section-number">10.1</span>  oTree-organizing idea:</a></li>
+  <li><a href="#outline-of-the-experimental-program-to-be-created" id="toc-outline-of-the-experimental-program-to-be-created" class="nav-link active" data-scroll-target="#outline-of-the-experimental-program-to-be-created"><span class="toc-section-number">10.1</span>  Outline of the experimental program to be created:</a></li>
+  <li><a href="#create-an-app" id="toc-create-an-app" class="nav-link" data-scroll-target="#create-an-app"><span class="toc-section-number">10.2</span>  Create an app</a>
+  <ul class="collapse">
+  <li><a href="#defining-the-constants-class-basic-design" id="toc-defining-the-constants-class-basic-design" class="nav-link" data-scroll-target="#defining-the-constants-class-basic-design"><span class="toc-section-number">10.2.1</span>  Defining the Constants class: basic design</a></li>
+  <li><a href="#player-class-definition" id="toc-player-class-definition" class="nav-link" data-scroll-target="#player-class-definition"><span class="toc-section-number">10.2.2</span>  Player class definition</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -171,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Questionnaire survey with oTree</span></h1>
 </div>
 
 
@@ -185,18 +258,47 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="otree-organizing-idea" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="otree-organizing-idea"><span class="header-section-number">10.1</span> oTree-organizing idea:</h2>
-<p>It’s easier to understand if you think about the program while thinking about this</p>
+<section id="outline-of-the-experimental-program-to-be-created" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="outline-of-the-experimental-program-to-be-created"><span class="header-section-number">10.1</span> Outline of the experimental program to be created:</h2>
 <ul>
-<li>how many players?</li>
-<li>What are the variables that affect everyon?e</li>
-<li>What variables are determined by individual players?</li>
-<li>How many pages to create?</li>
-<li>What kind of page transition is performed?</li>
+<li>Questionnaire (single player)
+<ul>
+<li>Question item
+<ul>
+<li>Gender (radio button)</li>
+<li>Age (optional)</li>
+<li>Prefecture of residence (optional)</li>
+<li>Device used for answering (select)</li>
+</ul></li>
+</ul></li>
 </ul>
+</section>
+<section id="create-an-app" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="create-an-app"><span class="header-section-number">10.2</span> Create an app</h2>
+<p>Create a base application</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>otree startapp questionnaire</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="defining-the-constants-class-basic-design" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="defining-the-constants-class-basic-design"><span class="header-section-number">10.2.1</span> Defining the Constants class: basic design</h3>
+<ul>
+<li><p>Open models.py in questionnaire folder</p></li>
+<li><p>Set the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>class Constants(BaseConstants):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    name_in_url = 'questionnaire'</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    players_per_group = None </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    num_rounds = 1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notes:</p>
+<ul>
+<li><p>For <code>players_per_group</code>, enter “None” for 1 player.</p></li>
+<li><p>For <code>num_rounds</code>, enter “1” to ask only once.</p></li>
+<li><p><code>names_in_url</code>, <code>players_per_group</code>, <code>num_rounds</code> are defined on oTree, so it is not desirable to use them as arbitrary variable names</p></li>
+</ul>
+</section>
+<section id="player-class-definition" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="player-class-definition"><span class="header-section-number">10.2.2</span> Player class definition</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -305,8 +407,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter_11.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

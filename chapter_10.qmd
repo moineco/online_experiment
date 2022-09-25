@@ -1,11 +1,41 @@
-# Conclusion
+# Questionnaire survey with oTree
 
-## oTree-organizing idea: 
+## Outline of the experimental program to be created:
 
-It's easier to understand if you think about the program while thinking about this
+- Questionnaire (single player)
+    - Question item
+       - Gender (radio button)
+       - Age (optional)
+       - Prefecture of residence (optional)
+       - Device used for answering (select)
 
-- how many players?
-- What are the variables that affect everyon?e
-- What variables are determined by individual players?
-- How many pages to create?
-- What kind of page transition is performed?
+
+## Create an app
+Create a base application
+
+```default
+otree startapp questionnaire
+```
+
+### Defining the Constants class: basic design
+
+- Open models.py in questionnaire folder
+
+- Set the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.
+
+```default
+class Constants(BaseConstants):
+    name_in_url = 'questionnaire'
+    players_per_group = None 
+    num_rounds = 1 
+```
+Notes: 
+
+- For `players_per_group`, enter "None" for 1 player. 
+
+- For `num_rounds`, enter "1" to ask only once.
+
+- `names_in_url`, `players_per_group`, `num_rounds` are defined on oTree, so it is not desirable to use them as arbitrary variable names
+
+### Player class definition
+

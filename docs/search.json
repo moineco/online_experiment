@@ -156,8 +156,15 @@
   {
     "objectID": "chapter_10.html",
     "href": "chapter_10.html",
-    "title": "10  Conclusion",
+    "title": "10  Questionnaire survey with oTree",
     "section": "",
-    "text": "It’s easier to understand if you think about the program while thinking about this\n\nhow many players?\nWhat are the variables that affect everyon?e\nWhat variables are determined by individual players?\nHow many pages to create?\nWhat kind of page transition is performed?"
+    "text": "Questionnaire (single player)\n\nQuestion item\n\nGender (radio button)\nAge (optional)\nPrefecture of residence (optional)\nDevice used for answering (select)"
+  },
+  {
+    "objectID": "chapter_10.html#create-an-app",
+    "href": "chapter_10.html#create-an-app",
+    "title": "10  Questionnaire survey with oTree",
+    "section": "10.2 Create an app",
+    "text": "10.2 Create an app\nCreate a base application\notree startapp questionnaire\n\n10.2.1 Defining the Constants class: basic design\n\nOpen models.py in questionnaire folder\nSet the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.\n\nclass Constants(BaseConstants):\n    name_in_url = 'questionnaire'\n    players_per_group = None \n    num_rounds = 1 \nNotes:\n\nFor players_per_group, enter “None” for 1 player.\nFor num_rounds, enter “1” to ask only once.\nnames_in_url, players_per_group, num_rounds are defined on oTree, so it is not desirable to use them as arbitrary variable names\n\n\n\n10.2.2 Player class definition"
   }
 ]
