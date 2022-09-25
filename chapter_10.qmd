@@ -113,10 +113,10 @@ class Player(BasePlayer):
 </div>
 
 <div style="background-color:#e6e6e6;">
-    {% formfield player.q_tanmatsu %}
+    {% formfield player.q_device %}
     {% formfield player.q_gender %}
     {% formfield player.q_age %}
-    {% formfield player.q_country %}
+    {% formfield player.q_prefecture %}
 </div>
 
 
@@ -146,10 +146,10 @@ class Player(BasePlayer):
 
 
 ```html
-  {% formfield player.q_tanmatsu %}
+  {% formfield player.q_device %}
   {% formfield player.q_gender %}
   {% formfield player.q_age %}
-  {% formfield player.q_country %}
+  {% formfield player.q_prefecture %}
 ```
 
 * Write `{% formfield [defined in models] %}` for an item that requires some kind of input.
@@ -189,8 +189,8 @@ class Page1(Page):
     form_fields = [
     'q_gender',
     'q_age',
-    'q_country',
-    'q_tanmatsu'
+    'q_prefecture',
+    'q_device'
     ]
 ```
 
