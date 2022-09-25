@@ -77,6 +77,6 @@ class Player(BasePlayer):
                                         'smartphone',
                                         'other than that'
                                         ],
-                                verbose_name='Which electronic device are you answering this answer on? ',
+                                verbose_name='By which electronic device are you answering? ',
                                 widget=forms.Select())
 ```
