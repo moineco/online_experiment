@@ -1,3 +1,13 @@
 # Pages.py
 
 Pages.py for logic of the web pages
+
+Responsible for screen display. It defines the order of screen display and the data (input items) to be displayed. In oTree, `pages.py` (`views.py`) mainly plays that role. As an image, it shows "what data is displayed (What)"
+
+Decide what to do when each page is displayed.
+
+  - where do you run the function?
+  
+  - On which page do you enter certain variables?
+
+  - In what order do page transitions occur?

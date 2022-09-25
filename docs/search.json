@@ -46,7 +46,7 @@
     "href": "chapter_1.html#otree-setup",
     "title": "1  Installation and environments",
     "section": "1.6 oTree setup",
-    "text": "1.6 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control+C at your command line.\nTo create a new app, run\n\notree startapp app_name\n\nSession configs are defined in settings.py"
+    "text": "1.6 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\nStart your own terminal as a server.\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control+C at your command line.\nTo create a new app, run\n\notree startapp app_name\n\nSession configs are defined in settings.py"
   },
   {
     "objectID": "chapter_2.html",
@@ -123,13 +123,41 @@
     "href": "chapter_7.html",
     "title": "7  Pages.py",
     "section": "",
-    "text": "Pages.py for logic of the web pages"
+    "text": "Responsible for screen display. It defines the order of screen display and the data (input items) to be displayed. In oTree, pages.py (views.py) mainly plays that role. As an image, it shows “what data is displayed (What)”\nDecide what to do when each page is displayed.\n\nwhere do you run the function?\nOn which page do you enter certain variables?\nIn what order do page transitions occur?"
   },
   {
     "objectID": "chapter_8.html",
     "href": "chapter_8.html",
     "title": "8  Template.html",
     "section": "",
-    "text": "Templates for web pages that the participant sees, e.g. Instructions, WaitPage, Results participant inputs."
+    "text": "Responsible for screen display. The part for creating the web page displayed on the screen. In oTree, each html file in the template folder mainly plays that role. As an image, it shows “How to display data”.\ncreate a screen in html format\n\nWhere to output characters.\nWhere to create the input field.\nWhere to output the calculation results."
+  },
+  {
+    "objectID": "chapter_6.html",
+    "href": "chapter_6.html",
+    "title": "6  Models.py",
+    "section": "",
+    "text": "Models.py for calculations, logic of the game. Responsible for processing related to data access. Perform interactions between web apps and databases. In oTree, models.py mainly plays that role. As an image, it deals with “definition of necessary data” and “calculation (logic)”\ndetermine the variables in the experiment"
+  },
+  {
+    "objectID": "chapter_6.html#constants",
+    "href": "chapter_6.html#constants",
+    "title": "6  Models.py",
+    "section": "6.1 Constants",
+    "text": "6.1 Constants\nclass Constants(BaseConstants):\n   name_in_url = 'public_goods_simple'\n   players_per_group = 3\n   num_rounds = 1\n   \n   endowmwnt = c(100)\n   efficiency_factor = 1.8"
+  },
+  {
+    "objectID": "chapter_9.html",
+    "href": "chapter_9.html",
+    "title": "9  Settings.py",
+    "section": "",
+    "text": "You can also register multiple apps at once here."
+  },
+  {
+    "objectID": "chapter_10.html",
+    "href": "chapter_10.html",
+    "title": "10  Conclusion",
+    "section": "",
+    "text": "It’s easier to understand if you think about the program while thinking about this\n\nhow many players?\nWhat are the variables that affect everyon?e\nWhat variables are determined by individual players?\nHow many pages to create?\nWhat kind of page transition is performed?"
   }
 ]

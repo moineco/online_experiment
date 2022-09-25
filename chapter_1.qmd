@@ -2,11 +2,11 @@
 
 ## Install Python
 
-- Before installing oTree, it is required to have Python installed in your environment to run oTree.
+-   Before installing oTree, it is required to have Python installed in your environment to run oTree.
 
-- Open the python website and install **Python3** for your OS from this [Python](https://www.python.org/) website.
+-   Open the python website and install **Python3** for your OS from this [Python](https://www.python.org/) website.
 
-- Choose the most recent version of Python
+-   Choose the most recent version of Python
 
 ## Install pip
 
@@ -14,84 +14,83 @@ If your Python environment does not have pip installed, you can install it by fo
 
 ## Install Pycharm
 
-- PyCharm is a famous Python IDE (Integrated Development Environment). We
-recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this
-[Pycharm](https://www.jetbrains.com/help/pycharm/installation-guide.html) website to download the installation package.
+-   PyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this [Pycharm](https://www.jetbrains.com/help/pycharm/installation-guide.html) website to download the installation package.
 
-- There are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.
+-   There are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.
 
-- Alternatively you can install the community version of Pycharm which is free of charge.
+-   Alternatively you can install the community version of Pycharm which is free of charge.
 
-### Run Pycharm  
+### Run Pycharm
 
-- Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.
+-   Create a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.
 
 ## Install GitHub
 
 Make sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code.
 
-
 ## Install oTree
 
-- oTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:
+-   oTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:
 
-```default
+``` default
 pip3 install otree
 ```
 
-- You can install oTree in your computer by using the terminal in Pycharm as well.
+-   You can install oTree in your computer by using the terminal in Pycharm as well.
 
-```default
+``` default
 pip3 install otree
 ```
 
 ### Upgrading/reinstalling oTree
 
-```default
+``` default
 pip3 install -U otree
 ```
 
-- Recommend upgrading every couple of weeks.
+-   Recommend upgrading every couple of weeks.
 
-### Regarding the installation of oTree in Linux 
+### Regarding the installation of oTree in Linux
 
-- You might need to do the proxy server settings
+-   You might need to do the proxy server settings
 
-- In the Pycharm, you can open the terminal and install oTree as below:
+-   In the Pycharm, you can open the terminal and install oTree as below:
 
-```default
+``` default
 set https_proxy address:password
 pip install otree
 ```
 
 ## oTree setup
 
-- From your command prompt, create your **IGG** project
+-   From your command prompt, create your **IGG** project
 
-```default
+``` default
 otree startproject IGG
 ```
 
-- Move into the folder you just created
+-   Move into the folder you just created
 
-```default
+``` default
 cd IGG
 ```
 
-- Run the server
+-   Run the server
 
-```default
+    Start your own terminal as a server.
+
+``` default
 otree devserver
 ```
 
-- Open your browser to http://localhost:8000/. You should see the oTree demo site.
+-   Open your browser to http://localhost:8000/. You should see the oTree demo site.
 
-- To stop the server, press **Control+C** at your command line.
+-   To stop the server, press **Control+C** at your command line.
 
-- To create a new app, run 
+-   To create a new app, run
 
-```default
+``` default
 otree startapp app_name
 ```
 
-- Session configs are defined in **settings.py**
+-   Session configs are defined in **settings.py**

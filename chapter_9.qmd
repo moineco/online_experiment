@@ -1,1 +1,5 @@
 # Settings.py
+
+To implement experiments with oTree, you need to register your app in `SESSION_CONFIGS` in `settings.py`.
+
+You can also register multiple apps at once here.
