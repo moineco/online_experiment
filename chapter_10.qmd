@@ -13,7 +13,7 @@
 ## Create an app
 Create a base application
 
-```default
+```python
 otree startapp questionnaire
 ```
 
@@ -23,7 +23,7 @@ otree startapp questionnaire
 
 - Set the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.
 
-```default
+```python
 class Constants(BaseConstants):
     name_in_url = 'questionnaire'
     players_per_group = None 
@@ -37,16 +37,20 @@ Notes:
 
 - `names_in_url`, `players_per_group`, `num_rounds` are defined on oTree, so it is not desirable to use them as arbitrary variable names.
 
-### Skip class
+### Subsession class definition
 
-- Skip subsession
+- Since there is no interaction between players this time, it is not defined.
 
-```default
+```python
 class Subsession(BaseSubsession):
     pass
 ```
-- Skip group defination
-```default
+
+### Group class definition
+
+- Since there is no interaction between players this time, it is not defined.
+
+```python
 class Group(BaseGroup):
     pass
 ```
@@ -55,7 +59,7 @@ class Group(BaseGroup):
 
 - Define variables for each player in the Player class
 
-```default
+```python
 class Player(BasePlayer):
     q_gender = models.CharField(initial=None,
                                 choices=['male', 'female', 'no answer'],
@@ -80,3 +84,146 @@ class Player(BasePlayer):
                                 verbose_name='By which electronic device are you answering? ',
                                 widget=forms.Select())
 ```
+
+
+## Defining templates:
+
+- In templates, we will decide on the page to display specific items.
+
+- Create an html file called `Page1.html` in `questionnaire/templates/questionnaire`
+  
+   - You just need to rewrite the existing `MyPage.html`
+   
+### pages
+
+```html
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Questions:
+{%endblock%}
+
+{% block content %}
+
+<div>
+    <p>
+        Please select the most appropriate (closest) option for the following questions. <br>
+    </p>
+</div>
+
+<div style="background-color:#e6e6e6;">
+    {% formfield player.q_tanmatsu %}
+    {% formfield player.q_gender %}
+    {% formfield player.q_age %}
+    {% formfield player.q_country %}
+</div>
+
+
+    {% next_button %}
+
+{%endblock%}
+```
+
+### easy explanation
+
+```html
+{% block title %}
+    Questions:
+{%endblock%}
+```
+
+* Set the "Title" in the web page.
+
+
+```html
+{% block content %}
+    ...
+{%endblock%}
+```
+
+* Write the actual question items in this.
+
+
+```html
+  {% formfield player.q_tanmatsu %}
+  {% formfield player.q_gender %}
+  {% formfield player.q_age %}
+  {% formfield player.q_country %}
+```
+
+* Write `{% formfield [defined in models] %}` for an item that requires some kind of input.
+  * In this case, the input defined in the player class is required, so it is written as `player.`.
+
+
+```html
+  {% next_button %}
+```
+* This is the "Next" button.
+  * Click this button to go to the next screen.
+
+
+## definition of pages:
+
+- In `pages.py`, set the ``page display order'', ``input items'', ** ``function calculation order''**, etc.
+
+  - Actually, the ``order of function calculation'' is important.
+  
+- However, there is no function calculation this time, so don't worry about it.
+  
+- Behavior set in `pages.py`
+
+  - Define the contents of `Page1.html`.
+  
+    - Display the items to be entered.
+
+### About Page1
+- On `Page1`, there is an input of the answer to the question item.
+
+  - Let's make an input screen.
+
+
+```python
+class Page1(Page):
+    form_model = 'player'
+    form_fields = [
+    'q_gender',
+    'q_age',
+    'q_country',
+    'q_tanmatsu'
+    ]
+```
+
+### Define the display order
+
+* Defines the order in which the screen is displayed at the end.
+
+```python
+page_sequence = [Page1]
+```
+
+
+## Defining session configs in setting:
+
+* To implement experiments with oTree, you need to register your app in `SESSION_CONFIGS` in `settings.py`.
+
+```python
+SESSION_CONFIGS = [
+    dict(
+        name='questionnaire',
+        display_name="Initial Questionnaire",
+        num_demo_participants=1, # Here we need to define how many people will participate in the demo.
+        app_sequence=['questionnaire']
+    ),
+]
+```
+
+## start as server
+
+- Start your own terminal as a server
+
+```python
+otree devserver
+```
+  - Now you can run the experiment on your own terminal.
+  - Access [http://localhost:8000/](http://localhost:8000/).

@@ -234,9 +234,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#create-an-app" id="toc-create-an-app" class="nav-link" data-scroll-target="#create-an-app"><span class="toc-section-number">10.2</span>  Create an app</a>
   <ul class="collapse">
   <li><a href="#defining-the-constants-class-basic-design" id="toc-defining-the-constants-class-basic-design" class="nav-link" data-scroll-target="#defining-the-constants-class-basic-design"><span class="toc-section-number">10.2.1</span>  Defining the Constants class: basic design</a></li>
-  <li><a href="#skip-class" id="toc-skip-class" class="nav-link" data-scroll-target="#skip-class"><span class="toc-section-number">10.2.2</span>  Skip class</a></li>
-  <li><a href="#player-class-definition" id="toc-player-class-definition" class="nav-link" data-scroll-target="#player-class-definition"><span class="toc-section-number">10.2.3</span>  Player class definition</a></li>
+  <li><a href="#subsession-class-definition" id="toc-subsession-class-definition" class="nav-link" data-scroll-target="#subsession-class-definition"><span class="toc-section-number">10.2.2</span>  Subsession class definition</a></li>
+  <li><a href="#group-class-definition" id="toc-group-class-definition" class="nav-link" data-scroll-target="#group-class-definition"><span class="toc-section-number">10.2.3</span>  Group class definition</a></li>
+  <li><a href="#player-class-definition" id="toc-player-class-definition" class="nav-link" data-scroll-target="#player-class-definition"><span class="toc-section-number">10.2.4</span>  Player class definition</a></li>
   </ul></li>
+  <li><a href="#defining-templates" id="toc-defining-templates" class="nav-link" data-scroll-target="#defining-templates"><span class="toc-section-number">10.3</span>  Defining templates:</a>
+  <ul class="collapse">
+  <li><a href="#pages" id="toc-pages" class="nav-link" data-scroll-target="#pages"><span class="toc-section-number">10.3.1</span>  pages</a></li>
+  <li><a href="#easy-explanation" id="toc-easy-explanation" class="nav-link" data-scroll-target="#easy-explanation"><span class="toc-section-number">10.3.2</span>  easy explanation</a></li>
+  </ul></li>
+  <li><a href="#definition-of-pages" id="toc-definition-of-pages" class="nav-link" data-scroll-target="#definition-of-pages"><span class="toc-section-number">10.4</span>  definition of pages:</a>
+  <ul class="collapse">
+  <li><a href="#about-page1" id="toc-about-page1" class="nav-link" data-scroll-target="#about-page1"><span class="toc-section-number">10.4.1</span>  About Page1</a></li>
+  <li><a href="#define-the-display-order" id="toc-define-the-display-order" class="nav-link" data-scroll-target="#define-the-display-order"><span class="toc-section-number">10.4.2</span>  Define the display order</a></li>
+  </ul></li>
+  <li><a href="#defining-session-configs-in-setting" id="toc-defining-session-configs-in-setting" class="nav-link" data-scroll-target="#defining-session-configs-in-setting"><span class="toc-section-number">10.5</span>  Defining session configs in setting:</a></li>
+  <li><a href="#start-as-server" id="toc-start-as-server" class="nav-link" data-scroll-target="#start-as-server"><span class="toc-section-number">10.6</span>  start as server</a></li>
   </ul>
 </nav>
     </div>
@@ -277,17 +290,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="create-an-app" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="create-an-app"><span class="header-section-number">10.2</span> Create an app</h2>
 <p>Create a base application</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>otree startapp questionnaire</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>otree startapp questionnaire</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="defining-the-constants-class-basic-design" class="level3" data-number="10.2.1">
 <h3 data-number="10.2.1" class="anchored" data-anchor-id="defining-the-constants-class-basic-design"><span class="header-section-number">10.2.1</span> Defining the Constants class: basic design</h3>
 <ul>
 <li><p>Open models.py in questionnaire folder</p></li>
 <li><p>Set the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.</p></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>class Constants(BaseConstants):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    name_in_url = 'questionnaire'</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    players_per_group = None </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    num_rounds = 1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Constants(BaseConstants):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    name_in_url <span class="op">=</span> <span class="st">'questionnaire'</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    players_per_group <span class="op">=</span> <span class="va">None</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    num_rounds <span class="op">=</span> <span class="dv">1</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notes:</p>
 <ul>
 <li><p>For <code>players_per_group</code>, enter “None” for 1 player.</p></li>
@@ -295,50 +308,190 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>names_in_url</code>, <code>players_per_group</code>, <code>num_rounds</code> are defined on oTree, so it is not desirable to use them as arbitrary variable names.</p></li>
 </ul>
 </section>
-<section id="skip-class" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="skip-class"><span class="header-section-number">10.2.2</span> Skip class</h3>
+<section id="subsession-class-definition" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="subsession-class-definition"><span class="header-section-number">10.2.2</span> Subsession class definition</h3>
 <ul>
-<li>Skip subsession</li>
+<li>Since there is no interaction between players this time, it is not defined.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>class Subsession(BaseSubsession):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    pass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Skip group defination</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>class Group(BaseGroup):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    pass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Subsession(BaseSubsession):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="player-class-definition" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="player-class-definition"><span class="header-section-number">10.2.3</span> Player class definition</h3>
+<section id="group-class-definition" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="group-class-definition"><span class="header-section-number">10.2.3</span> Group class definition</h3>
+<ul>
+<li>Since there is no interaction between players this time, it is not defined.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Group(BaseGroup):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="player-class-definition" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="player-class-definition"><span class="header-section-number">10.2.4</span> Player class definition</h3>
 <ul>
 <li>Define variables for each player in the Player class</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>class Player(BasePlayer):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    q_gender = models.CharField(initial=None,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                choices=['male', 'female', 'no answer'],</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                                verbose_name='What is your gender? ',</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                widget=widgets.RadioSelect())</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player(BasePlayer):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    q_gender <span class="op">=</span> models.CharField(initial<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                choices<span class="op">=</span>[<span class="st">'male'</span>, <span class="st">'female'</span>, <span class="st">'no answer'</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                                verbose_name<span class="op">=</span><span class="st">'What is your gender? '</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                widget<span class="op">=</span>widgets.RadioSelect())</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    q_age = models.PositiveIntegerField(verbose_name='What is your age?',</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                                        choices=range(0, 125),</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                                        initial=None)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    q_age <span class="op">=</span> models.PositiveIntegerField(verbose_name<span class="op">=</span><span class="st">'What is your age?'</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                                        choices<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">125</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                                        initial<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    q_prefecture = models.CharField(initial=None,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                                choices=['Hokkaido', 'Aomori', 'Iwate', 'Miyagi', 'Akita', 'Yamagata', 'Fukushima', 'Ibaraki', 'Tochigi', 'Gunma', 'Saitama', 'Chiba', 'Tokyo', 'Kanagawa', 'Niigata', 'Toyama', 'Ishikawa', 'Fukui', 'Yamanashi', 'Nagano', 'Gifu', 'Shizuoka', 'Aichi', 'Mie', 'Shiga', 'Kyoto', 'Osaka', 'Hyogo', 'Nara', 'Wakayama', 'Tottori', 'Shimane', 'Okayama', 'Hiroshima', 'Yamaguchi', 'Tokushima', 'Kagawa', 'Ehime', 'Kochi', 'Fukuoka', 'Saga', 'Nagasaki', 'Kumamoto', 'Oita', 'Miyazaki', 'Kagoshima', 'Okinawa'],</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                                verbose_name='What area do you live in? ',</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                                widget=forms.Select())</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    q_prefecture <span class="op">=</span> models.CharField(initial<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                                choices<span class="op">=</span>[<span class="st">'Hokkaido'</span>, <span class="st">'Aomori'</span>, <span class="st">'Iwate'</span>, <span class="st">'Miyagi'</span>, <span class="st">'Akita'</span>, <span class="st">'Yamagata'</span>, <span class="st">'Fukushima'</span>, <span class="st">'Ibaraki'</span>, <span class="st">'Tochigi'</span>, <span class="st">'Gunma'</span>, <span class="st">'Saitama'</span>, <span class="st">'Chiba'</span>, <span class="st">'Tokyo'</span>, <span class="st">'Kanagawa'</span>, <span class="st">'Niigata'</span>, <span class="st">'Toyama'</span>, <span class="st">'Ishikawa'</span>, <span class="st">'Fukui'</span>, <span class="st">'Yamanashi'</span>, <span class="st">'Nagano'</span>, <span class="st">'Gifu'</span>, <span class="st">'Shizuoka'</span>, <span class="st">'Aichi'</span>, <span class="st">'Mie'</span>, <span class="st">'Shiga'</span>, <span class="st">'Kyoto'</span>, <span class="st">'Osaka'</span>, <span class="st">'Hyogo'</span>, <span class="st">'Nara'</span>, <span class="st">'Wakayama'</span>, <span class="st">'Tottori'</span>, <span class="st">'Shimane'</span>, <span class="st">'Okayama'</span>, <span class="st">'Hiroshima'</span>, <span class="st">'Yamaguchi'</span>, <span class="st">'Tokushima'</span>, <span class="st">'Kagawa'</span>, <span class="st">'Ehime'</span>, <span class="st">'Kochi'</span>, <span class="st">'Fukuoka'</span>, <span class="st">'Saga'</span>, <span class="st">'Nagasaki'</span>, <span class="st">'Kumamoto'</span>, <span class="st">'Oita'</span>, <span class="st">'Miyazaki'</span>, <span class="st">'Kagoshima'</span>, <span class="st">'Okinawa'</span>],</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                                verbose_name<span class="op">=</span><span class="st">'What area do you live in? '</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                                widget<span class="op">=</span>forms.Select())</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    q_device = models.CharField(initial=None,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                                choices=['computer',</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                                        'Tablet',</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                        'smartphone',</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                                        'other than that'</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    q_device <span class="op">=</span> models.CharField(initial<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                                choices<span class="op">=</span>[<span class="st">'computer'</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">'Tablet'</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">'smartphone'</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">'other than that'</span></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                                        ],</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                                verbose_name='By which electronic device are you answering? ',</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                                widget=forms.Select())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                                verbose_name<span class="op">=</span><span class="st">'By which electronic device are you answering? '</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                                widget<span class="op">=</span>forms.Select())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+</section>
+<section id="defining-templates" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="defining-templates"><span class="header-section-number">10.3</span> Defining templates:</h2>
+<ul>
+<li><p>In templates, we will decide on the page to display specific items.</p></li>
+<li><p>Create an html file called <code>Page1.html</code> in <code>questionnaire/templates/questionnaire</code></p>
+<ul>
+<li>You just need to rewrite the existing <code>MyPage.html</code></li>
+</ul></li>
+</ul>
+<section id="pages" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="pages"><span class="header-section-number">10.3.1</span> pages</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>{% extends "global/Page.html" %}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>{% load otree static %}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>{% block title %}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    Questions:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>{%endblock%}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        Please select the most appropriate (closest) option for the following questions. <span class="kw">&lt;br&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">"background-color:#e6e6e6;"</span><span class="kw">&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    {% formfield player.q_tanmatsu %}</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    {% formfield player.q_gender %}</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    {% formfield player.q_age %}</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    {% formfield player.q_country %}</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    {% next_button %}</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>{%endblock%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="easy-explanation" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="easy-explanation"><span class="header-section-number">10.3.2</span> easy explanation</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>{% block title %}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    Questions:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>{%endblock%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Set the “Title” in the web page.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>{%endblock%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Write the actual question items in this.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  {% formfield player.q_tanmatsu %}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  {% formfield player.q_gender %}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  {% formfield player.q_age %}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  {% formfield player.q_country %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Write <code>{% formfield [defined in models] %}</code> for an item that requires some kind of input.
+<ul>
+<li>In this case, the input defined in the player class is required, so it is written as <code>player.</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>  {% next_button %}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>This is the “Next” button.
+<ul>
+<li>Click this button to go to the next screen.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="definition-of-pages" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="definition-of-pages"><span class="header-section-number">10.4</span> definition of pages:</h2>
+<ul>
+<li><p>In <code>pages.py</code>, set the <code>page display order'',</code>input items’‘, ** ``function calculation order’’**, etc.</p>
+<ul>
+<li>Actually, the ``order of function calculation’’ is important.</li>
+</ul></li>
+<li><p>However, there is no function calculation this time, so don’t worry about it.</p></li>
+<li><p>Behavior set in <code>pages.py</code></p>
+<ul>
+<li><p>Define the contents of <code>Page1.html</code>.</p>
+<ul>
+<li>Display the items to be entered.</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="about-page1" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="about-page1"><span class="header-section-number">10.4.1</span> About Page1</h3>
+<ul>
+<li><p>On <code>Page1</code>, there is an input of the answer to the question item.</p>
+<ul>
+<li>Let’s make an input screen.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Page1(Page):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    form_model <span class="op">=</span> <span class="st">'player'</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    form_fields <span class="op">=</span> [</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'q_gender'</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'q_age'</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'q_country'</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'q_tanmatsu'</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="define-the-display-order" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="define-the-display-order"><span class="header-section-number">10.4.2</span> Define the display order</h3>
+<ul>
+<li>Defines the order in which the screen is displayed at the end.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>page_sequence <span class="op">=</span> [Page1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="defining-session-configs-in-setting" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="defining-session-configs-in-setting"><span class="header-section-number">10.5</span> Defining session configs in setting:</h2>
+<ul>
+<li>To implement experiments with oTree, you need to register your app in <code>SESSION_CONFIGS</code> in <code>settings.py</code>.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>SESSION_CONFIGS <span class="op">=</span> [</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">dict</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="st">'questionnaire'</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        display_name<span class="op">=</span><span class="st">"Initial Questionnaire"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        num_demo_participants<span class="op">=</span><span class="dv">1</span>, <span class="co"># Here we need to define how many people will participate in the demo.</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        app_sequence<span class="op">=</span>[<span class="st">'questionnaire'</span>]</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="start-as-server" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="start-as-server"><span class="header-section-number">10.6</span> start as server</h2>
+<ul>
+<li>Start your own terminal as a server</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>otree devserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Now you can run the experiment on your own terminal.</li>
+<li>Access <a href="http://localhost:8000/">http://localhost:8000/</a>.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
