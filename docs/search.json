@@ -189,9 +189,9 @@
     "text": "10.6 start as server\n\nStart your own terminal as a server\n\notree devserver\n\nNow you can run the experiment on your own terminal.\nAccess http://localhost:8000/."
   },
   {
-    "objectID": "chapter_11.html",
-    "href": "chapter_11.html",
-    "title": "11  Conclusion",
+    "objectID": "chapter_12.html",
+    "href": "chapter_12.html",
+    "title": "12  Conclusion",
     "section": "",
     "text": "It’s easier to understand if you think about the program while thinking about this\n\nhow many players?\nWhat are the variables that affect everyone?\nWhat variables are determined by individual players?\nHow many pages to create?\nWhat kind of page transition is performed?"
   },

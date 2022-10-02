@@ -2,11 +2,11 @@
 
 In order to make the oTree instance accessible globally, a server is needed. We use Heroku which is a cloud hosting server that provides a platform for apps where you can easily host your oTree application and open access to the public.
 
-If you run an experiment with a substantial number of participants, you must upgrade to a paid server. As you can immediately scale the server capacity it is not expensive to use. For instance, if you run your experiment in the timeframe of three days, you only pay 3/30th of the monthly fees as you scale it up before you use it and scale it down after you use it. After you have created an account on Heroku, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli). After installing the Heroku Command Line Interface (CLI), there are three ways to deploy experiments to Heroku: 
+If you run an experiment with a substantial number of participants, you must upgrade to a paid server. As you can immediately scale the server capacity it is not expensive to use. For instance, if you run your experiment in the timeframe of three days, you only pay 3/30th of the monthly fees as you scale it up before you use it and scale it down after you use it. After you have created an account on Heroku, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli). After installing the Heroku Command Line Interface (CLI), there are three ways to deploy experiments to Heroku:
 
-1. oTree Hub
-2. GitHub
-3. Terminal
+1.  oTree Hub
+2.  GitHub
+3.  Terminal
 
 ## Connecting oTree to Heroku
 
@@ -18,59 +18,59 @@ oTree Hub is the easiest way and requires least coding. However, convenience com
 
 GitHub also does not require programming and you can even auto-deploy your experiment every time you commit changes to GitHub. If you have a GitHub account, you can integrate this with Heroku. In Heroku, create an app and click on "Deploy". Here, you can authorize Heroku to access your GitHub repositories. After authorizing Heroku, you can search for your GitHub repository and connect it to Heroku. You can either manually deploy your GitHub repository to Heroku or automatically deploy all pushes you make to GitHub. If you add new variables in your experiment, you should reset the database in Heroku by using the following code in the Command Prompt.
 
-```default
+``` default
 heroku login
 heroku run "otree resetdb" --app your_appname
 ```
+
 ### **Terminal**
 
 You can use the command line (or Terminal for iOS users) to deploy your experiment to Heroku. In this case, you do not need any third-party software except Heroku. To use the command prompt you need to follow the following steps:
 
-- Locate the project root folder (particular oTree instance).
+-   Locate the project root folder (particular oTree instance).
 
-```default
+``` default
 cd '/Users/Name/Folder/'
 ```
 
-- If you have created a Heroku account, use the following command. If you do not have a Heroku account yet, you can create one here.
+-   If you have created a Heroku account, use the following command. If you do not have a Heroku account yet, you can create one here.
 
-```default
+``` default
 heroku login
 ```
 
-- If the above command does not work, you probably have not installed Heroku CLI properly.
+-   If the above command does not work, you probably have not installed Heroku CLI properly.
 
-- Then, you can create a new Heroku-app, if you don't have one yet.
+-   Then, you can create a new Heroku-app, if you don't have one yet.
 
-```default
+``` default
 heroku create your_appname
 ```
 
-- Since you are already in the project root folder you can create the .git here.
+-   Since you are already in the project root folder you can create the .git here.
 
-```default
+``` default
 git init
 heroku git:remote -a your_appname
 ```
 
-- You can push your code locally to Heroku. 
-Finally push the local repository to the Heroku server.
+-   You can push your code locally to Heroku. Finally push the local repository to the Heroku server.
 
-```default
+``` default
 git push heroku master
 ```
 
-- In order to view the Heroku app, enter the following command or enter the URL in your browser.
+-   In order to view the Heroku app, enter the following command or enter the URL in your browser.
 
-```default
+``` default
 heroku open
 ```
 
-- If you add new variables in the models.py, you should reset the database in Heroku.
+-   If you add new variables in the models.py, you should reset the database in Heroku.
 
-```default
+``` default
 heroku login
 heroku run "otree reset db" --APP your_appname
 ```
 
-- Or do it manually in the Heroku app, simlarly to the way described earlier.
+-   Or do it manually in the Heroku app, simlarly to the way described earlier.

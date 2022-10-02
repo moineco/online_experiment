@@ -1,0 +1,11 @@
+# Conclusion
+
+## oTree-organizing idea:
+
+It's easier to understand if you think about the program while thinking about this
+
+-   how many players?
+-   What are the variables that affect everyone?
+-   What variables are determined by individual players?
+-   How many pages to create?
+-   What kind of page transition is performed?
