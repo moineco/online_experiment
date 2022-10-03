@@ -227,7 +227,7 @@ otree devserver
 
 ## Example of a survey
 
-To run a simple survey in oTree, you need to deal with your 
+To run a simple survey in oTree, you need to deal with followings:
 
 1. `init.py` file which consist of **models** and **pages**
 
