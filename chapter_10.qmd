@@ -2,64 +2,65 @@
 
 ## Outline of the experimental program to be created:
 
-- Questionnaire (single player)
-    - Question item
-       - Gender (radio button)
-       - Age (optional)
-       - Prefecture of residence (optional)
-       - Device used for answering (select)
-
+-   Questionnaire (single player)
+    -   Question item
+        -   Gender (radio button)
+        -   Age (optional)
+        -   Prefecture of residence (optional)
+        -   Device used for answering (select)
 
 ## Create an app
+
 Create a base application
 
-```python
+``` python
 otree startapp questionnaire
 ```
 
 ### Defining the Constants class: basic design
 
-- Open models.py in questionnaire folder
+-   Open models.py in questionnaire folder
 
-- Set the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.
+-   Set the number of people, the number of repetitions, the initial holding amount, and the coefficient in the Constants class.
 
-```python
+``` python
 class Constants(BaseConstants):
     name_in_url = 'questionnaire'
     players_per_group = None 
     num_rounds = 1 
 ```
-Notes: 
 
-- For `players_per_group`, enter "None" for 1 player. 
+Notes:
 
-- For `num_rounds`, enter "1" to ask only once.
+-   For `players_per_group`, enter "None" for 1 player.
 
-- `names_in_url`, `players_per_group`, `num_rounds` are defined on oTree, so it is not desirable to use them as arbitrary variable names.
+-   For `num_rounds`, enter "1" to ask only once.
+
+-   `names_in_url`, `players_per_group`, `num_rounds` are defined on oTree, so it is not desirable to use them as arbitrary variable names.
 
 ### Subsession class definition
 
-- Since there is no interaction between players this time, it is not defined.
+-   Since there is no interaction between players this time, it is not defined.
 
-```python
+``` python
 class Subsession(BaseSubsession):
     pass
 ```
 
 ### Group class definition
 
-- Since there is no interaction between players this time, it is not defined.
+-   Since there is no interaction between players this time, it is not defined.
 
-```python
+``` python
 class Group(BaseGroup):
     pass
 ```
 
 ### Player class definition
 
-- Define variables for each player in the Player class
+-   Define variables for each player in the Player class
 
-```python
+``` python
 class Player(BasePlayer):
     q_gender = models.CharField(initial=None,
                                 choices=['male', 'female', 'no answer'],
@@ -85,18 +86,17 @@ class Player(BasePlayer):
                                 widget=forms.Select())
 ```
 
-
 ## Defining templates:
 
-- In templates, we will decide on the page to display specific items.
+-   In templates, we will decide on the page to display specific items.
 
-- Create an html file called `Page1.html` in `questionnaire/templates/questionnaire`
-  
-   - You just need to rewrite the existing `MyPage.html`
-   
+-   Create an html file called `Page1.html` in `questionnaire/templates/questionnaire`
+
+    -   You just need to rewrite the existing `MyPage.html`
+
 ### pages
 
-```html
+``` html
 {% extends "global/Page.html" %}
 {% load otree static %}
 
@@ -127,63 +127,60 @@ class Player(BasePlayer):
 
 ### easy explanation
 
-```html
+``` html
 {% block title %}
     Questions:
 {%endblock%}
 ```
 
-* Set the "Title" in the web page.
+-   Set the "Title" in the web page.
 
-
-```html
+``` html
 {% block content %}
     ...
 {%endblock%}
 ```
 
-* Write the actual question items in this.
+-   Write the actual question items in this.
 
-
-```html
+``` html
   {% formfield player.q_device %}
   {% formfield player.q_gender %}
   {% formfield player.q_age %}
   {% formfield player.q_prefecture %}
 ```
 
-* Write `{% formfield [defined in models] %}` for an item that requires some kind of input.
-  * In this case, the input defined in the player class is required, so it is written as `player.`.
+-   Write `{% formfield [defined in models] %}` for an item that requires some kind of input.
+    -   In this case, the input defined in the player class is required, so it is written as `player.`.
 
-
-```html
+``` html
   {% next_button %}
 ```
-* This is the "Next" button.
-  * Click this button to go to the next screen.
 
+-   This is the "Next" button.
+    -   Click this button to go to the next screen.
 
 ## definition of pages:
 
-- In `pages.py`, set the ``page display order'', ``input items'', ** ``function calculation order''**, etc.
+-   In `pages.py`, set the `page display order'',`input items'', \*\* \`\`function calculation order''\*\*, etc.
 
-  - Actually, the ``order of function calculation'' is important.
-  
-- However, there is no function calculation this time, so don't worry about it.
-  
-- Behavior set in `pages.py`
+    -   Actually, the \`\`order of function calculation'' is important.
 
-  - Define the contents of `Page1.html`.
-  
-    - Display the items to be entered.
+-   However, there is no function calculation this time, so don't worry about it.
+
+-   Behavior set in `pages.py`
+
+    -   Define the contents of `Page1.html`.
+
+        -   Display the items to be entered.
 
 ### About Page1
-- On `Page1`, there is an input of the answer to the question item.
 
-  - Let's make an input screen.
+-   On `Page1`, there is an input of the answer to the question item.
 
+    -   Let's make an input screen.
 
-```python
+``` python
 class Page1(Page):
     form_model = 'player'
     form_fields = [
@@ -196,18 +193,17 @@ class Page1(Page):
 
 ### Define the display order
 
-* Defines the order in which the screen is displayed at the end.
+-   Defines the order in which the screen is displayed at the end.
 
-```python
+``` python
 page_sequence = [Page1]
 ```
 
-
 ## Defining session configs in setting:
 
-* To implement experiments with oTree, you need to register your app in `SESSION_CONFIGS` in `settings.py`.
+-   To implement experiments with oTree, you need to register your app in `SESSION_CONFIGS` in `settings.py`.
 
-```python
+``` python
 SESSION_CONFIGS = [
     dict(
         name='questionnaire',
@@ -220,10 +216,297 @@ SESSION_CONFIGS = [
 
 ## start as server
 
-- Start your own terminal as a server
+-   Start your own terminal as a server
 
-```python
+``` python
 otree devserver
 ```
-  - Now you can run the experiment on your own terminal.
-  - Access [http://localhost:8000/](http://localhost:8000/).
+
+-   Now you can run the experiment on your own terminal.
+-   Access <http://localhost:8000/>.
+
+## Example of a survey
+
+To run a simple survey in oTree, you need to deal with your 
+
+1. `init.py` file which consist of **models** and **pages**
+
+2.  Based on how many web pages you want to show in your survey, you need to create same number of .html pages in the oTree.
+
+3. Every oTree project consists of a `settings.py` file that oragnize the flow of the project.
+
+- The detail code for the `init.py` is below:
+
+``` python
+from otree.api import *
+
+doc = """
+Survey(SVO, CRT, Survey)
+"""
+
+def make_field(label):
+    return models.IntegerField(
+         choices=[
+            [7, '7. Well applicable'],
+            [6, '6. Applicable'],
+            [5, '5. どちらかといえば当てはまる'],
+            [4, '4. どちらともいえない'],
+            [3, '3. どちらかといえば当てはまらない'],
+            [2, '2. 当てはまらない'],
+            [1, '1. Not applicable at all'],
+        ],
+        label=label,
+        widget=widgets.RadioSelect,
+   )
+
+class C(BaseConstants): #class C(BaseConstans)は定数の定義している.
+    NAME_IN_URL = 'survey' #URLの名前
+    PLAYERS_PER_GROUP = None #一グループ何人にするのか、調査に関しては一人でするものなので、Noneとする
+    NUM_ROUNDS = 1 #一回で終わる場合は１、回数によって数を変える
+
+
+class Subsession(BaseSubsession): #サブセッションの設定、今回の調査は一人で一回記入すると終了するのでサブセッションはいじらなくてよい
+    pass
+
+
+class Group(BaseGroup): #gruopに関しても、今回はアンケートなので、いじる必要なし。。
+    pass
+
+
+class Player(BasePlayer):
+    age = models.IntegerField(label='What is your age?', min=13, max=125) #IntergerField()は整数をテキストボックスに記入させる、label=質問文、min,maxで最小と最大値を指定
+    gender = models.StringField( #stringFieldは、文字列用
+        choices=[['Male', 'Male'], ['Female', 'Female']],#[value, display]のペアをリスト化できる。映し出されるのはdisplayのほう
+        label='What is your gender?',
+        widget=widgets.RadioSelect,#回答フォームがラジオボタン式(複数の選択項目の中から１つのみ選択)
+    )
+
+    q_country = models.StringField(initial=0,
+                                   label='あなたのおすまいの地域を教えてください．',
+                                   choices=['北海道',
+                                            '青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県',
+                                            '茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県',
+                                            '新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県', '静岡県', '愛知県',
+                                            '三重県','滋賀県', '京都府', '大阪府', '兵庫県', '奈良県', '和歌山県','鳥取県',
+                                            '島根県', '岡山県', '広島県', '山口県','徳島県', '香川県', '愛媛県', '高知県',
+                                            '福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮崎県', '鹿児島県', '沖縄県'])
+
+    q_tanmatsu = models.StringField(initial=None,
+                                    choices=['パソコン',
+                                            'タブレット',
+                                            'スマートフォン',
+                                            'それ以外'
+                                            ],
+                                    label='この回答は、どの電子機器で回答していますか？',
+                                    widget=widgets.RadioSelect)
+
+    kannsou = models.LongStringField(initial=None,
+                                     label='本日の感想をお書きください',
+                                     )
+
+    crt_bat = models.IntegerField(
+        label='''
+        A bat and a ball cost 22 dollars in total.
+        The bat costs 20 dollars more than the ball.
+        How many dollars does the ball cost?'''
+    )
+    crt_widget = models.IntegerField(
+        label='''
+        If it takes 5 machines 5 minutes to make 5 widgets,
+        how many minutes would it take 100 machines to make 100 widgets?
+        '''
+    )
+    crt_lake = models.IntegerField(
+        label='''
+        In a lake, there is a patch of lily pads.
+        Every day, the patch doubles in size.
+        If it takes 48 days for the patch to cover the entire lake,
+        how many days would it take for the patch to cover half of the lake?
+        '''
+    )
+
+   #Legacy, Responsibility, Ethics
+
+    Legacy_positive = make_field(label='将来世代のために、正の遺産を残すことは重要である。')
+    Legacy_negative = make_field('将来世代に負の遺産を残さないことは重要である。')
+    Responsibility = make_field('私は将来世代への責任を感じる。')
+    Affinity = make_field('将来世代への共感、及び、親近感をもっている。')
+    Ethical_problem = make_field('将来世代のことを考える際に、倫理観は重要である。')
+    Ethical_moral = make_field('将来世代のことを考える際に、道徳観は重要である。')
+    Ethical_society = make_field('将来世代のことを考える際に、社会的責任を考慮することは重要である。')
+    Ethical_fairness = make_field('将来世代のことを考える際に、公平性は重要な観点である。')
+
+
+
+# FUNCTIONS
+# PAGES
+
+class Demographics(Page):
+    form_model = 'player'
+    form_fields = ['age', 'gender', 'q_country', 'q_tanmatsu', 'kannsou']
+
+class CognitiveReflectionTest(Page):
+    form_model = 'player'
+    form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
+
+class LRE(Page):
+    form_model = 'player'
+    form_fields = ['Legacy_positive', 'Legacy_negative', 'Responsibility', 'Affinity',
+                   'Ethical_problem', 'Ethical_moral', 'Ethical_society', 'Ethical_fairness']
+
+class survey_instruction(Page):
+    pass
+
+class Results(Page):
+    pass
+page_sequence = [survey_instruction, Demographics, CognitiveReflectionTest, LRE, Results]
+
+```
+
+- The `settings.py` file is as below:
+
+```python
+from os import environ
+
+
+SESSION_CONFIGS = [
+    dict(
+        name='survey',#作ったファイルの名前
+        app_sequence=['survey','payment_info'],
+        num_demo_participants=5,#ゲームのグループの人数
+    )
+]
+
+# if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
+# in SESSION_CONFIGS, except those that explicitly override it.
+# the session config can be accessed from methods in your apps as self.session.config,
+# e.g. self.session.config['participation_fee']
+
+SESSION_CONFIG_DEFAULTS = dict(
+    real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
+)
+
+PARTICIPANT_FIELDS = []
+SESSION_FIELDS = []
+
+# ISO-639 code
+# for example: de, fr, ja, ko, zh-hans
+LANGUAGE_CODE = 'en'
+
+# e.g. EUR, GBP, CNY, JPY
+REAL_WORLD_CURRENCY_CODE = 'JPY'
+USE_POINTS = True
+
+ADMIN_USERNAME = 'admin'
+# for security, best to set admin password in an environment variable
+ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
+
+DEMO_PAGE_INTRO_HTML = """
+Here are some oTree games.
+"""
+
+
+SECRET_KEY = '7050001148777'
+
+```
+
+In this survey, we have used five different pages. So we need to create five .html files:
+
+- CognitiveReflectionTest.html
+
+- Demograhics.html
+
+- LRE.html
+
+- Results.html
+
+- survey_instructions.html
+
+You can find the contents of each html files below:
+
+1. CognitiveReflectionTest.html
+
+```html
+{{ block title }}Survey{{ endblock }}
+{{ block content }}
+<p> あなたの年齢は{{ player.age }}で、性別は{{ player.gender }}です。</p>
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}
+```
+
+2. Demograhics.html
+
+```html
+{{ block title }}Survey{{ endblock }}
+{{ block content }}
+
+    <p>
+
+    </p>
+
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}
+```
+
+3. LRE.html
+
+```html
+{{ block title }}
+
+{{ endblock }}
+{{ block content }}
+    <p>
+        <b> 各質問に対して、あなたはどれくらい当てはまりますか。選択肢１～7の中からお選びください。</b>
+    </p>
+    {{ formfields }}
+
+{{ next_button }}
+{{ endblock }}
+```
+
+4. Results.html
+
+```html
+{{ block title }}
+お疲れ様でした。
+{{ endblock }}
+
+{{ block content }}
+<p>実験参加有難う御座いました。<br>
+    以上で本実験は終了です。
+    Zoomに戻り、指示があるまでお待ち下さい。
+</p>
+
+
+
+{{ endblock }}
+```
+
+5. survey_instruction.html
+
+```html
+{{ block title }}
+    質問表
+{{ endblock }}
+
+{{ block content }}
+<p>これ以降の質問に答えて下さい。</p>
+<p><b>個人情報の取扱いについて</b></p>
+<p>
+今回の調査で知り得た内容については、調査の目的以外には使用いたしません。<br>
+回収した調査票・データについても適切に処分、管理し、本プロジェクトの目的以外に利用することはありません。<br>
+あなたの個人情報は、完全に匿名性が担保されており教育、研究の目的にのみ使用されます。
+</p>
+
+<img width="200" height="200" src="{{ static 'sihuku11.jpg' }}"/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kj8FIDXvjsY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {{ next_button }}
+{{ endblock }}
+```

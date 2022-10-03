@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.165">
+<meta name="generator" content="quarto-1.1.168">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -255,6 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#defining-session-configs-in-setting" id="toc-defining-session-configs-in-setting" class="nav-link" data-scroll-target="#defining-session-configs-in-setting"><span class="toc-section-number">10.5</span>  Defining session configs in setting:</a></li>
   <li><a href="#start-as-server" id="toc-start-as-server" class="nav-link" data-scroll-target="#start-as-server"><span class="toc-section-number">10.6</span>  start as server</a></li>
+  <li><a href="#example-of-a-survey" id="toc-example-of-a-survey" class="nav-link" data-scroll-target="#example-of-a-survey"><span class="toc-section-number">10.7</span>  Example of a survey</a></li>
   </ul>
 </nav>
     </div>
@@ -493,8 +494,272 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>otree devserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Now you can run the experiment on your own terminal.</li>
-<li>Access <a href="http://localhost:8000/">http://localhost:8000/</a>.</li>
+<li>Access <a href="http://localhost:8000/" class="uri">http://localhost:8000/</a>.</li>
 </ul>
+</section>
+<section id="example-of-a-survey" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="example-of-a-survey"><span class="header-section-number">10.7</span> Example of a survey</h2>
+<p>To run a simple survey in oTree, you need to deal with your</p>
+<ol type="1">
+<li><p><code>init.py</code> file which consist of <strong>models</strong> and <strong>pages</strong></p></li>
+<li><p>Based on how many web pages you want to show in your survey, you need to create same number of .html pages in the oTree.</p></li>
+<li><p>Every oTree project consists of a <code>settings.py</code> file that oragnize the flow of the project.</p></li>
+</ol>
+<ul>
+<li>The detail code for the <code>init.py</code> is below:</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> otree.api <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st">Survey(SVO, CRT, Survey)</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_field(label):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> models.IntegerField(</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>         choices<span class="op">=</span>[</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">7</span>, <span class="st">'7. Well applicable'</span>],</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">6</span>, <span class="st">'6. Applicable'</span>],</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">5</span>, <span class="st">'5. どちらかといえば当てはまる'</span>],</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">4</span>, <span class="st">'4. どちらともいえない'</span>],</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">3</span>, <span class="st">'3. どちらかといえば当てはまらない'</span>],</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">2</span>, <span class="st">'2. 当てはまらない'</span>],</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>            [<span class="dv">1</span>, <span class="st">'1. Not applicable at all'</span>],</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>label,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        widget<span class="op">=</span>widgets.RadioSelect,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> C(BaseConstants): <span class="co">#class C(BaseConstans)は定数の定義している.</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    NAME_IN_URL <span class="op">=</span> <span class="st">'survey'</span> <span class="co">#URLの名前</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    PLAYERS_PER_GROUP <span class="op">=</span> <span class="va">None</span> <span class="co">#一グループ何人にするのか、調査に関しては一人でするものなので、Noneとする</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    NUM_ROUNDS <span class="op">=</span> <span class="dv">1</span> <span class="co">#一回で終わる場合は１、回数によって数を変える</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Subsession(BaseSubsession): <span class="co">#サブセッションの設定、今回の調査は一人で一回記入すると終了するのでサブセッションはいじらなくてよい</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Group(BaseGroup): <span class="co">#gruopに関しても、今回はアンケートなので、いじる必要なし。。</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player(BasePlayer):</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> models.IntegerField(label<span class="op">=</span><span class="st">'What is your age?'</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">13</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">125</span>) <span class="co">#IntergerField()は整数をテキストボックスに記入させる、label=質問文、min,maxで最小と最大値を指定</span></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>    gender <span class="op">=</span> models.StringField( <span class="co">#stringFieldは、文字列用</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        choices<span class="op">=</span>[[<span class="st">'Male'</span>, <span class="st">'Male'</span>], [<span class="st">'Female'</span>, <span class="st">'Female'</span>]],<span class="co">#[value, display]のペアをリスト化できる。映し出されるのはdisplayのほう</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'What is your gender?'</span>,</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>        widget<span class="op">=</span>widgets.RadioSelect,<span class="co">#回答フォームがラジオボタン式(複数の選択項目の中から１つのみ選択)</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>    q_country <span class="op">=</span> models.StringField(initial<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>                                   label<span class="op">=</span><span class="st">'あなたのおすまいの地域を教えてください．'</span>,</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>                                   choices<span class="op">=</span>[<span class="st">'北海道'</span>,</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'青森県'</span>, <span class="st">'岩手県'</span>, <span class="st">'宮城県'</span>, <span class="st">'秋田県'</span>, <span class="st">'山形県'</span>, <span class="st">'福島県'</span>,</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'茨城県'</span>, <span class="st">'栃木県'</span>, <span class="st">'群馬県'</span>, <span class="st">'埼玉県'</span>, <span class="st">'千葉県'</span>, <span class="st">'東京都'</span>, <span class="st">'神奈川県'</span>,</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'新潟県'</span>, <span class="st">'富山県'</span>, <span class="st">'石川県'</span>, <span class="st">'福井県'</span>, <span class="st">'山梨県'</span>, <span class="st">'長野県'</span>, <span class="st">'岐阜県'</span>, <span class="st">'静岡県'</span>, <span class="st">'愛知県'</span>,</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'三重県'</span>,<span class="st">'滋賀県'</span>, <span class="st">'京都府'</span>, <span class="st">'大阪府'</span>, <span class="st">'兵庫県'</span>, <span class="st">'奈良県'</span>, <span class="st">'和歌山県'</span>,<span class="st">'鳥取県'</span>,</span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'島根県'</span>, <span class="st">'岡山県'</span>, <span class="st">'広島県'</span>, <span class="st">'山口県'</span>,<span class="st">'徳島県'</span>, <span class="st">'香川県'</span>, <span class="st">'愛媛県'</span>, <span class="st">'高知県'</span>,</span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'福岡県'</span>, <span class="st">'佐賀県'</span>, <span class="st">'長崎県'</span>, <span class="st">'熊本県'</span>, <span class="st">'大分県'</span>, <span class="st">'宮崎県'</span>, <span class="st">'鹿児島県'</span>, <span class="st">'沖縄県'</span>])</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>    q_tanmatsu <span class="op">=</span> models.StringField(initial<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>                                    choices<span class="op">=</span>[<span class="st">'パソコン'</span>,</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'タブレット'</span>,</span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'スマートフォン'</span>,</span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">'それ以外'</span></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>                                            ],</span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>                                    label<span class="op">=</span><span class="st">'この回答は、どの電子機器で回答していますか？'</span>,</span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>                                    widget<span class="op">=</span>widgets.RadioSelect)</span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>    kannsou <span class="op">=</span> models.LongStringField(initial<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>                                     label<span class="op">=</span><span class="st">'本日の感想をお書きください'</span>,</span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>                                     )</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>    crt_bat <span class="op">=</span> models.IntegerField(</span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'''</span></span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a><span class="st">        A bat and a ball cost 22 dollars in total.</span></span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a><span class="st">        The bat costs 20 dollars more than the ball.</span></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a><span class="st">        How many dollars does the ball cost?'''</span></span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a>    crt_widget <span class="op">=</span> models.IntegerField(</span>
+<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'''</span></span>
+<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a><span class="st">        If it takes 5 machines 5 minutes to make 5 widgets,</span></span>
+<span id="cb15-76"><a href="#cb15-76" aria-hidden="true" tabindex="-1"></a><span class="st">        how many minutes would it take 100 machines to make 100 widgets?</span></span>
+<span id="cb15-77"><a href="#cb15-77" aria-hidden="true" tabindex="-1"></a><span class="st">        '''</span></span>
+<span id="cb15-78"><a href="#cb15-78" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-79"><a href="#cb15-79" aria-hidden="true" tabindex="-1"></a>    crt_lake <span class="op">=</span> models.IntegerField(</span>
+<span id="cb15-80"><a href="#cb15-80" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'''</span></span>
+<span id="cb15-81"><a href="#cb15-81" aria-hidden="true" tabindex="-1"></a><span class="st">        In a lake, there is a patch of lily pads.</span></span>
+<span id="cb15-82"><a href="#cb15-82" aria-hidden="true" tabindex="-1"></a><span class="st">        Every day, the patch doubles in size.</span></span>
+<span id="cb15-83"><a href="#cb15-83" aria-hidden="true" tabindex="-1"></a><span class="st">        If it takes 48 days for the patch to cover the entire lake,</span></span>
+<span id="cb15-84"><a href="#cb15-84" aria-hidden="true" tabindex="-1"></a><span class="st">        how many days would it take for the patch to cover half of the lake?</span></span>
+<span id="cb15-85"><a href="#cb15-85" aria-hidden="true" tabindex="-1"></a><span class="st">        '''</span></span>
+<span id="cb15-86"><a href="#cb15-86" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-87"><a href="#cb15-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-88"><a href="#cb15-88" aria-hidden="true" tabindex="-1"></a>   <span class="co">#Legacy, Responsibility, Ethics</span></span>
+<span id="cb15-89"><a href="#cb15-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-90"><a href="#cb15-90" aria-hidden="true" tabindex="-1"></a>    Legacy_positive <span class="op">=</span> make_field(label<span class="op">=</span><span class="st">'将来世代のために、正の遺産を残すことは重要である。'</span>)</span>
+<span id="cb15-91"><a href="#cb15-91" aria-hidden="true" tabindex="-1"></a>    Legacy_negative <span class="op">=</span> make_field(<span class="st">'将来世代に負の遺産を残さないことは重要である。'</span>)</span>
+<span id="cb15-92"><a href="#cb15-92" aria-hidden="true" tabindex="-1"></a>    Responsibility <span class="op">=</span> make_field(<span class="st">'私は将来世代への責任を感じる。'</span>)</span>
+<span id="cb15-93"><a href="#cb15-93" aria-hidden="true" tabindex="-1"></a>    Affinity <span class="op">=</span> make_field(<span class="st">'将来世代への共感、及び、親近感をもっている。'</span>)</span>
+<span id="cb15-94"><a href="#cb15-94" aria-hidden="true" tabindex="-1"></a>    Ethical_problem <span class="op">=</span> make_field(<span class="st">'将来世代のことを考える際に、倫理観は重要である。'</span>)</span>
+<span id="cb15-95"><a href="#cb15-95" aria-hidden="true" tabindex="-1"></a>    Ethical_moral <span class="op">=</span> make_field(<span class="st">'将来世代のことを考える際に、道徳観は重要である。'</span>)</span>
+<span id="cb15-96"><a href="#cb15-96" aria-hidden="true" tabindex="-1"></a>    Ethical_society <span class="op">=</span> make_field(<span class="st">'将来世代のことを考える際に、社会的責任を考慮することは重要である。'</span>)</span>
+<span id="cb15-97"><a href="#cb15-97" aria-hidden="true" tabindex="-1"></a>    Ethical_fairness <span class="op">=</span> make_field(<span class="st">'将来世代のことを考える際に、公平性は重要な観点である。'</span>)</span>
+<span id="cb15-98"><a href="#cb15-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a><span class="co"># FUNCTIONS</span></span>
+<span id="cb15-102"><a href="#cb15-102" aria-hidden="true" tabindex="-1"></a><span class="co"># PAGES</span></span>
+<span id="cb15-103"><a href="#cb15-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-104"><a href="#cb15-104" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Demographics(Page):</span>
+<span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a>    form_model <span class="op">=</span> <span class="st">'player'</span></span>
+<span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a>    form_fields <span class="op">=</span> [<span class="st">'age'</span>, <span class="st">'gender'</span>, <span class="st">'q_country'</span>, <span class="st">'q_tanmatsu'</span>, <span class="st">'kannsou'</span>]</span>
+<span id="cb15-107"><a href="#cb15-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-108"><a href="#cb15-108" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CognitiveReflectionTest(Page):</span>
+<span id="cb15-109"><a href="#cb15-109" aria-hidden="true" tabindex="-1"></a>    form_model <span class="op">=</span> <span class="st">'player'</span></span>
+<span id="cb15-110"><a href="#cb15-110" aria-hidden="true" tabindex="-1"></a>    form_fields <span class="op">=</span> [<span class="st">'crt_bat'</span>, <span class="st">'crt_widget'</span>, <span class="st">'crt_lake'</span>]</span>
+<span id="cb15-111"><a href="#cb15-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-112"><a href="#cb15-112" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> LRE(Page):</span>
+<span id="cb15-113"><a href="#cb15-113" aria-hidden="true" tabindex="-1"></a>    form_model <span class="op">=</span> <span class="st">'player'</span></span>
+<span id="cb15-114"><a href="#cb15-114" aria-hidden="true" tabindex="-1"></a>    form_fields <span class="op">=</span> [<span class="st">'Legacy_positive'</span>, <span class="st">'Legacy_negative'</span>, <span class="st">'Responsibility'</span>, <span class="st">'Affinity'</span>,</span>
+<span id="cb15-115"><a href="#cb15-115" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Ethical_problem'</span>, <span class="st">'Ethical_moral'</span>, <span class="st">'Ethical_society'</span>, <span class="st">'Ethical_fairness'</span>]</span>
+<span id="cb15-116"><a href="#cb15-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-117"><a href="#cb15-117" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> survey_instruction(Page):</span>
+<span id="cb15-118"><a href="#cb15-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-119"><a href="#cb15-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Results(Page):</span>
+<span id="cb15-121"><a href="#cb15-121" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-122"><a href="#cb15-122" aria-hidden="true" tabindex="-1"></a>page_sequence <span class="op">=</span> [survey_instruction, Demographics, CognitiveReflectionTest, LRE, Results]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>The <code>settings.py</code> file is as below:</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> os <span class="im">import</span> environ</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>SESSION_CONFIGS <span class="op">=</span> [</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">dict</span>(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="st">'survey'</span>,<span class="co">#作ったファイルの名前</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        app_sequence<span class="op">=</span>[<span class="st">'survey'</span>,<span class="st">'payment_info'</span>],</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        num_demo_participants<span class="op">=</span><span class="dv">5</span>,<span class="co">#ゲームのグループの人数</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># in SESSION_CONFIGS, except those that explicitly override it.</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co"># the session config can be accessed from methods in your apps as self.session.config,</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. self.session.config['participation_fee']</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>SESSION_CONFIG_DEFAULTS <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    real_world_currency_per_point<span class="op">=</span><span class="fl">1.00</span>, participation_fee<span class="op">=</span><span class="fl">0.00</span>, doc<span class="op">=</span><span class="st">""</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>PARTICIPANT_FIELDS <span class="op">=</span> []</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>SESSION_FIELDS <span class="op">=</span> []</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="co"># ISO-639 code</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="co"># for example: de, fr, ja, ko, zh-hans</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>LANGUAGE_CODE <span class="op">=</span> <span class="st">'en'</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. EUR, GBP, CNY, JPY</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>REAL_WORLD_CURRENCY_CODE <span class="op">=</span> <span class="st">'JPY'</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>USE_POINTS <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>ADMIN_USERNAME <span class="op">=</span> <span class="st">'admin'</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="co"># for security, best to set admin password in an environment variable</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>ADMIN_PASSWORD <span class="op">=</span> environ.get(<span class="st">'OTREE_ADMIN_PASSWORD'</span>)</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>DEMO_PAGE_INTRO_HTML <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="st">Here are some oTree games.</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>SECRET_KEY <span class="op">=</span> <span class="st">'7050001148777'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this survey, we have used five different pages. So we need to create five .html files:</p>
+<ul>
+<li><p>CognitiveReflectionTest.html</p></li>
+<li><p>Demograhics.html</p></li>
+<li><p>LRE.html</p></li>
+<li><p>Results.html</p></li>
+<li><p>survey_instructions.html</p></li>
+</ul>
+<p>You can find the contents of each html files below:</p>
+<ol type="1">
+<li>CognitiveReflectionTest.html</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>{{ block title }}Survey{{ endblock }}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>{{ block content }}</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span> あなたの年齢は{{ player.age }}で、性別は{{ player.gender }}です。<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    {{ formfields }}</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    {{ next_button }}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Demograhics.html</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>{{ block title }}Survey{{ endblock }}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>{{ block content }}</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    {{ formfields }}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    {{ next_button }}</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>LRE.html</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>{{ block title }}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>{{ block content }}</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;b&gt;</span> 各質問に対して、あなたはどれくらい当てはまりますか。選択肢１～7の中からお選びください。<span class="kw">&lt;/b&gt;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    {{ formfields }}</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>{{ next_button }}</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Results.html</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>{{ block title }}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>お疲れ様でした。</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>{{ block content }}</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>実験参加有難う御座いました。<span class="kw">&lt;br&gt;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    以上で本実験は終了です。</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    Zoomに戻り、指示があるまでお待ち下さい。</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>survey_instruction.html</li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>{{ block title }}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    質問表</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>{{ block content }}</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>これ以降の質問に答えて下さい。<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;&lt;b&gt;</span>個人情報の取扱いについて<span class="kw">&lt;/b&gt;&lt;/p&gt;</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>今回の調査で知り得た内容については、調査の目的以外には使用いたしません。<span class="kw">&lt;br&gt;</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>回収した調査票・データについても適切に処分、管理し、本プロジェクトの目的以外に利用することはありません。<span class="kw">&lt;br&gt;</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>あなたの個人情報は、完全に匿名性が担保されており教育、研究の目的にのみ使用されます。</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">width</span><span class="ot">=</span><span class="st">"200"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"200"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"{{ static 'sihuku11.jpg' }}"</span><span class="kw">/&gt;</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;iframe</span> <span class="er">width</span><span class="ot">=</span><span class="st">"560"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"315"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://www.youtube.com/embed/kj8FIDXvjsY"</span> <span class="er">title</span><span class="ot">=</span><span class="st">"YouTube video player"</span> <span class="er">frameborder</span><span class="ot">=</span><span class="st">"0"</span> <span class="er">allow</span><span class="ot">=</span><span class="st">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span> <span class="er">allowfullscreen</span><span class="kw">&gt;&lt;/iframe&gt;</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    {{ next_button }}</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>{{ endblock }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
