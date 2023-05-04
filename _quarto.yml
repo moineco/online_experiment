@@ -22,7 +22,7 @@ book:
     - chapter_12.qmd
     - references.qmd
 
-bibliography: references.bib
+bibliography: social_experiment.bib
 
 format:
   html:
