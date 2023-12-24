@@ -1,27 +1,24 @@
 # Models.py
 
-
-Models.py for calculations, logic of the game. 
-Responsible for processing related to data access. Perform interactions between web apps and databases. In oTree, `models.py` mainly plays that role. As an image, it deals with "definition of necessary data" and "calculation (logic)"
+Models.py for calculations, logic of the game. Responsible for processing related to data access. Perform interactions between web apps and databases. In oTree, `models.py` mainly plays that role. As an image, it deals with "definition of necessary data" and "calculation (logic)"
 
 determine the variables in the experiment
 
-  - Repeat for how many periods?
-  
-  - How many players?
-  
-  - What variables affect all players?
-  
-  - What variables can individual players decide? 
-  
-  - What kind of calculation do you want it to do? 
-  
-  - Create a function.
+-   Repeat for how many periods?
 
+-   How many players?
+
+-   What variables affect all players?
+
+-   What variables can individual players decide?
+
+-   What kind of calculation do you want it to do?
+
+-   Create a function.
 
 ## Constants
 
-```default
+``` default
 class Constants(BaseConstants):
    name_in_url = 'public_goods_simple'
    players_per_group = 3
@@ -30,4 +27,3 @@ class Constants(BaseConstants):
    endowmwnt = c(100)
    efficiency_factor = 1.8
 ```
-

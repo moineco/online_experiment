@@ -2,38 +2,37 @@
 
 Once you have installed oTree and created an app you are ready to build your own experiment. If you examine an experiment, you will see that from a programming-perspective an experiment consists of some things. These can be seen as the four building blocks of oTree.
 
-1. **Templates**
+1.  **Templates**
 
-Every page in an experiment is a template with a certain lay-out and text. Templates are .html files in which you can use HTML, CSS, Javascript, and Django. 
+Every page in an experiment is a template with a certain lay-out and text. Templates are .html files in which you can use HTML, CSS, Javascript, and Django.
 
-2. **Models.py**
+2.  **Models.py**
 
 In **Models.py** you define the variables that will be stored in your data-output. For instance, if you want to ask the age of a participant you create a variable:
 
-```default
+``` default
 age = models.IntegerField(label="What is your age?")
 ```
 
 Here, a model is a database table and a field is one column within that table. In this case, an *IntegerField* is used, indicating that only integer numbers are valid. The label determines the text that is shown to participants next to the variable. There are six *StringField* that you can use:
 
-- *IntegerField* for integer numbers
+-   *IntegerField* for integer numbers
 
-- *FloatField* for numbers that may include decimals
+-   *FloatField* for numbers that may include decimals
 
-- *StringField* for strings of text
+-   *StringField* for strings of text
 
-- *LongStringField* for long strings of text
+-   *LongStringField* for long strings of text
 
-- *BooleanField* for True/False values
+-   *BooleanField* for True/False values
 
-- *CurrencyField* for currency amounts
+-   *CurrencyField* for currency amounts
 
-
-3. **Pages.py**
+3.  **Pages.py**
 
 In *Pages.py* you define every page that is shown to participants and specify which variables are allocated to that page. For instance:
 
-```default
+``` default
 class Instructions(Page):
     form_model = 'player'
     form_fields = ['Comprehension1', 'Comprehension2']
@@ -41,17 +40,17 @@ class Instructions(Page):
 
 Here, Instructions is the name of the page, and form_model refers to the level at which the variables should be stored. form_fields includes a list of variables that can be elicited on the page. In this case, we include two comprehension checks that are further defined in Models.py. Next to defining and specifying variables for every page, Pages.py is also used to determine the page sequence.
 
-```default
+``` default
 page_sequence = [Instructions, Main_Page, Results]
 ```
 
-Moreover, there are a battery of functions that can be used to specify conditions for each page. For example, the is_displayed() function determines conditions to which participants the page is displayed. 
+Moreover, there are a battery of functions that can be used to specify conditions for each page. For example, the is_displayed() function determines conditions to which participants the page is displayed.
 
-4. **Settings.py**
+4.  **Settings.py**
 
 The last building block of oTree is *Settings.py*. Here you define some overarching settings of your oTree project, such as the language used, the currency used, your admin username and password, how experimental currency translates to real-world currency, and the apps that are available. For the latter, if you have an app called attribute_substitution. You can make it available in your oTree server by typing:
 
-```default
+``` default
 SESSION_CONFIGS = [
     dict(
        name='attribute_substitution',
@@ -63,5 +62,3 @@ SESSION_CONFIGS = [
 ```
 
 Here, the name and display name are whatever you prefer (for name you cannot use spaces). The number of demo participants is the number of slots available to play a demo version of the experiment. The most important thing here is the app_sequence. In the app_sequence you define the sequence of apps that is displayed to participants. Suppose that you want to combine the attribute_substitution app with a public goods game or a survey, you can add, public_goods or survey, respectively.
-
-

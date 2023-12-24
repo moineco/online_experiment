@@ -6,8 +6,8 @@ Responsible for screen display. It defines the order of screen display and the d
 
 Decide what to do when each page is displayed.
 
-  - where do you run the function?
-  
-  - On which page do you enter certain variables?
+-   where do you run the function?
 
-  - In what order do page transitions occur?
+-   On which page do you enter certain variables?
+
+-   In what order do page transitions occur?

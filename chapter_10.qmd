@@ -229,13 +229,13 @@ otree devserver
 
 To run a simple survey in oTree, you need to deal with followings:
 
-1. `init.py` file which consist of **models** and **pages**
+1.  `init.py` file which consist of **models** and **pages**
 
 2.  Based on how many web pages you want to show in your survey, you need to create same number of .html pages in the oTree.
 
-3. Every oTree project consists of a `settings.py` file that oragnize the flow of the project.
+3.  Every oTree project consists of a `settings.py` file that oragnize the flow of the project.
 
-- The detail code for the `init.py` is below:
+-   The detail code for the `init.py` is below:
 
 ``` python
 from otree.api import *
@@ -360,12 +360,11 @@ class survey_instruction(Page):
 class Results(Page):
     pass
 page_sequence = [survey_instruction, Demographics, CognitiveReflectionTest, LRE, Results]
-
 ```
 
-- The `settings.py` file is as below:
+-   The `settings.py` file is as below:
 
-```python
+``` python
 from os import environ
 
 
@@ -407,26 +406,25 @@ Here are some oTree games.
 
 
 SECRET_KEY = '7050001148777'
-
 ```
 
 In this survey, we have used five different pages. So we need to create five .html files:
 
-- CognitiveReflectionTest.html
+-   CognitiveReflectionTest.html
 
-- Demograhics.html
+-   Demograhics.html
 
-- LRE.html
+-   LRE.html
 
-- Results.html
+-   Results.html
 
-- survey_instructions.html
+-   survey_instructions.html
 
 You can find the contents of each html files below:
 
-1. CognitiveReflectionTest.html
+1.  CognitiveReflectionTest.html
 
-```html
+``` html
 {{ block title }}Survey{{ endblock }}
 {{ block content }}
 <p> あなたの年齢は{{ player.age }}で、性別は{{ player.gender }}です。</p>
@@ -437,9 +435,9 @@ You can find the contents of each html files below:
 {{ endblock }}
 ```
 
-2. Demograhics.html
+2.  Demograhics.html
 
-```html
+``` html
 {{ block title }}Survey{{ endblock }}
 {{ block content }}
 
@@ -454,9 +452,9 @@ You can find the contents of each html files below:
 {{ endblock }}
 ```
 
-3. LRE.html
+3.  LRE.html
 
-```html
+``` html
 {{ block title }}
 
 {{ endblock }}
@@ -470,9 +468,9 @@ You can find the contents of each html files below:
 {{ endblock }}
 ```
 
-4. Results.html
+4.  Results.html
 
-```html
+``` html
 {{ block title }}
 お疲れ様でした。
 {{ endblock }}
@@ -488,9 +486,9 @@ You can find the contents of each html files below:
 {{ endblock }}
 ```
 
-5. survey_instruction.html
+5.  survey_instruction.html
 
-```html
+``` html
 {{ block title }}
     質問表
 {{ endblock }}
