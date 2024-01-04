@@ -5,7 +5,7 @@ project:
 book:
   title: "Social Experiments with oTree and Python"
   author: "Moinul Islam"
-  date: "9/1/2022"
+  date: "1/1/2024"
   chapters:
     - index.qmd
     - chapter_1.qmd
@@ -20,6 +20,9 @@ book:
     - chapter_10.qmd
     - chapter_11.qmd
     - chapter_12.qmd
+    #- chapter_13.qmd
+    #- chapter_14.qmd
+    #- chapter_15.qmd
     - references.qmd
 
 bibliography: social_experiment.bib

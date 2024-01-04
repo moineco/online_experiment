@@ -42,7 +42,7 @@ pip3 install otree
 pip3 install otree
 ```
 
-### Upgrading/reinstalling oTree
+### Upgrading/re-installing oTree
 
 ``` default
 pip3 install -U otree
