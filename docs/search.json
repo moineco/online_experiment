@@ -4,49 +4,70 @@
     "href": "index.html",
     "title": "Social Experiments with oTree and Python",
     "section": "",
-    "text": "Preface\noTree is an open-source and online software for implementing interactive experiments in the laboratory, online, the field or combinations thereof. The basic experimental setup in oTree consists of (i) an experiment written within oTree, (ii) a server computer, which can be a cloud server or a local laptop and (iii) subjects’ devices with a web browser. oTree creates an experimental session on the server, as well as links for all the participants and the experimenter.\noTree is a framework based on Python that lets you build multi-player strategy games, like the prisoner’s dilemma, public goods game and many other behavioral experiments in economics, psychology, and related field. This tutorial will develop experiments by using oTree software. For Python code generation, we will use Pycharm IDE.\nChapters:\n\nChapter 1:\nChapter 2:\nChapter 3:\nChapter 4:\nChapter 5:\nChapter 6:\nChapter 7:\nChapter 8:\nChapter 9:\nChapter 10:\nChapter 11:\nChapter 12:\nChapter 13:\nChapter 14:\nChapter 15:"
+    "text": "Preface\noTree is an open-source and online software for implementing interactive experiments in the laboratory, online, the field or combinations thereof. The basic experimental setup in oTree consists of (i) an experiment written within oTree, (ii) a server computer, which can be a cloud server or a local laptop and (iii) subjects’ devices with a web browser. oTree creates an experimental session on the server, as well as links for all the participants and the experimenter.\noTree is a framework based on Python that lets you build multi-player strategy games, like the prisoner’s dilemma, public goods game and many other behavioral experiments in economics, psychology, and related field. This tutorial will develop experiments by using oTree software. For Python code generation, we will use Pycharm IDE.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "chapter_1.html",
     "href": "chapter_1.html",
     "title": "1  Installation and environments",
     "section": "",
-    "text": "Before installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this Python website.\nChoose the most recent version of Python"
+    "text": "1.1 Install Python",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_1.html#install-pip",
     "href": "chapter_1.html#install-pip",
     "title": "1  Installation and environments",
     "section": "1.2 Install pip",
-    "text": "1.2 Install pip\nIf your Python environment does not have pip installed, you can install it by following this pip instructions."
+    "text": "1.2 Install pip\nIf your Python environment does not have pip installed, you can install it by following this pip instructions.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_1.html#install-pycharm",
     "href": "chapter_1.html#install-pycharm",
     "title": "1  Installation and environments",
     "section": "1.3 Install Pycharm",
-    "text": "1.3 Install Pycharm\n\nPyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this Pycharm website to download the installation package.\nThere are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge.\n\n\n1.3.1 Run Pycharm\n\nCreate a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you."
+    "text": "1.3 Install Pycharm\n\nPyCharm is a famous Python IDE (Integrated Development Environment). We recommend you to use PyCharm if you want to further customize your oTree app by programming. Please go to this Pycharm website to download the installation package.\nThere are different version of Pycharm. I recommend to install the Pycharm professional because it has better syntax highlighting. To have the professional version for academic use, you need to have an academic email address.\nAlternatively you can install the community version of Pycharm which is free of charge.\n\n\n1.3.1 Run Pycharm\n\nCreate a new Pycharm project. Choose pure python. Give a name of the project. Pycharm will create the project for you.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_1.html#install-github",
     "href": "chapter_1.html#install-github",
     "title": "1  Installation and environments",
     "section": "1.4 Install GitHub",
-    "text": "1.4 Install GitHub\nMake sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code."
+    "text": "1.4 Install GitHub\nMake sure you have some kind of version control, I use GitHub. If you crash your code, you can always go back to a previous version of the code.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_1.html#install-otree",
     "href": "chapter_1.html#install-otree",
     "title": "1  Installation and environments",
     "section": "1.5 Install oTree",
-    "text": "1.5 Install oTree\n\noTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:\n\npip3 install otree\n\nYou can install oTree in your computer by using the terminal in Pycharm as well.\n\npip3 install otree\n\n1.5.1 Upgrading/re-installing oTree\npip3 install -U otree\n\nRecommend upgrading every couple of weeks.\n\n\n\n1.5.2 Regarding the installation of oTree in Linux\n\nYou might need to do the proxy server settings\nIn the Pycharm, you can open the terminal and install oTree as below:\n\nset https_proxy address:password\npip install otree"
+    "text": "1.5 Install oTree\n\noTree can be installed through pip. Open the terminal (Mac/Linux) or command prompt (Windows PowerShell) and type:\n\npip3 install otree\n\nYou can install oTree in your computer by using the terminal in Pycharm as well.\n\npip3 install otree\n\n1.5.1 Upgrading/re-installing oTree\npip3 install -U otree\n\nRecommend upgrading every couple of weeks.\n\n\n\n1.5.2 Regarding the installation of oTree in Linux\n\nYou might need to do the proxy server settings\nIn the Pycharm, you can open the terminal and install oTree as below:\n\nset https_proxy address:password\npip install otree",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_1.html#otree-setup",
     "href": "chapter_1.html#otree-setup",
     "title": "1  Installation and environments",
     "section": "1.6 oTree setup",
-    "text": "1.6 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\nStart your own terminal as a server.\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control+C at your command line.\nTo create a new app, run\n\notree startapp app_name\n\nSession configs are defined in settings.py"
+    "text": "1.6 oTree setup\n\nFrom your command prompt, create your IGG project\n\notree startproject IGG\n\nMove into the folder you just created\n\ncd IGG\n\nRun the server\nStart your own terminal as a server.\n\notree devserver\n\nOpen your browser to http://localhost:8000/. You should see the oTree demo site.\nTo stop the server, press Control+C at your command line.\nTo create a new app, run\n\notree startapp app_name\n\nSession configs are defined in settings.py",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_2.html",
@@ -213,8 +234,11 @@
     "objectID": "chapter_1.html#install-python",
     "href": "chapter_1.html#install-python",
     "title": "1  Installation and environments",
-    "section": "1.1 Install Python",
-    "text": "1.1 Install Python\n\nBefore installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this Python website.\nChoose the most recent version of Python"
+    "section": "",
+    "text": "Before installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this Python website.\nChoose the most recent version of Python",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
   },
   {
     "objectID": "chapter_10.html#outline-of-the-experimental-program-to-be-created",
