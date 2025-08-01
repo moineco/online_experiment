@@ -1,20 +1,20 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Social Experiments with oTree and Python",
-    "section": "",
-    "text": "Preface\noTree is an open-source and online software for implementing interactive experiments in the laboratory, online, the field or combinations thereof. The basic experimental setup in oTree consists of (i) an experiment written within oTree, (ii) a server computer, which can be a cloud server or a local laptop and (iii) subjects’ devices with a web browser. oTree creates an experimental session on the server, as well as links for all the participants and the experimenter.\noTree is a framework based on Python that lets you build multi-player strategy games, like the prisoner’s dilemma, public goods game and many other behavioral experiments in economics, psychology, and related field. This tutorial will develop experiments by using oTree software. For Python code generation, we will use Pycharm IDE.",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
     "objectID": "chapter_1.html",
     "href": "chapter_1.html",
     "title": "1  Installation and environments",
     "section": "",
     "text": "1.1 Install Python",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
+    ]
+  },
+  {
+    "objectID": "chapter_1.html#install-python",
+    "href": "chapter_1.html#install-python",
+    "title": "1  Installation and environments",
+    "section": "",
+    "text": "Before installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this Python website.\nChoose the most recent version of Python",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
     ]
@@ -80,6 +80,16 @@
     ]
   },
   {
+    "objectID": "chapter_2.html#app",
+    "href": "chapter_2.html#app",
+    "title": "2  Structure of an oTree project",
+    "section": "",
+    "text": "One app can be an experiment or a part of experiment. A project is collection of all different types of App.\nIf your experiment consist of a prisoner’s dilemma game and a survey, then you need to create two apps, one app for prisoners dilemma and another app is for survey.\nLater you can combine these two apps and run one session.\nApp is like one experiment and project is like a container of different experiments.\nHow you structure the projects is up to you. You can choose the sequence.\nNow if you see the structure of the examples, you can see that there are various different types of folder.\nThe following two folders are known as global settings as they are same level of the project\n\n\n_Static\n\n\nImages, sounds, videos\n\n\n_Template\n\n\nDesign how web page look like. If you want a specific style of your webpage, you can include a template\n\n\nsettings.py\n\n\nIt is also global option. From this setting file, you can change various global options, for instance Your currency, language, interface\nIn this setting.py file you will find the session_configs where you can setup the sequence of apps for your project.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Structure of an oTree project</span>"
+    ]
+  },
+  {
     "objectID": "chapter_2.html#how-to-create-a-new-app.",
     "href": "chapter_2.html#how-to-create-a-new-app.",
     "title": "2  Structure of an oTree project",
@@ -104,7 +114,7 @@
     "href": "chapter_4.html",
     "title": "4  Pycharm to customize oTree studio project",
     "section": "",
-    "text": "4.1 Create project by oTree Hub",
+    "text": "4.1 Create project by oTree Hub\noTree Studio is a point-and-click interface for building oTree apps. It is free to use for small/medium sized projects.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Pycharm to customize oTree studio project</span>"
     ]
@@ -144,7 +154,7 @@
     "href": "chapter_5.html",
     "title": "5  Deploy on Heroku from oTree",
     "section": "",
-    "text": "5.1 Connecting oTree to Heroku",
+    "text": "5.1 Connecting oTree to Heroku\nIn order to make the oTree instance accessible globally, a server is needed. We use Heroku which is a cloud hosting server that provides a platform for apps where you can easily host your oTree application and open access to the public.\nIf you run an experiment with a substantial number of participants, you must upgrade to a paid server. As you can immediately scale the server capacity it is not expensive to use. For instance, if you run your experiment in the timeframe of three days, you only pay 3/30th of the monthly fees as you scale it up before you use it and scale it down after you use it. After you have created an account on Heroku, download and install the Heroku CLI. After installing the Heroku Command Line Interface (CLI), there are three ways to deploy experiments to Heroku:",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Deploy on Heroku from oTree</span>"
     ]
@@ -164,7 +174,7 @@
     "href": "chapter_6.html",
     "title": "6  Models.py",
     "section": "",
-    "text": "6.1 Constants",
+    "text": "6.1 Constants\nModels.py for calculations, logic of the game. Responsible for processing related to data access. Perform interactions between web apps and databases. In oTree, models.py mainly plays that role. As an image, it deals with “definition of necessary data” and “calculation (logic)”\ndetermine the variables in the experiment",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Models.py</span>"
     ]
@@ -220,6 +230,16 @@
     ]
   },
   {
+    "objectID": "chapter_10.html#outline-of-the-experimental-program-to-be-created",
+    "href": "chapter_10.html#outline-of-the-experimental-program-to-be-created",
+    "title": "10  Questionnaire survey with oTree",
+    "section": "",
+    "text": "Questionnaire (single player)\n\nQuestion item\n\nGender (radio button)\nAge (optional)\nPrefecture of residence (optional)\nDevice used for answering (select)",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Questionnaire survey with oTree</span>"
+    ]
+  },
+  {
     "objectID": "chapter_10.html#create-an-app",
     "href": "chapter_10.html#create-an-app",
     "title": "10  Questionnaire survey with oTree",
@@ -270,26 +290,6 @@
     ]
   },
   {
-    "objectID": "chapter_12.html",
-    "href": "chapter_12.html",
-    "title": "12  Conclusion",
-    "section": "",
-    "text": "12.1 oTree-organizing idea:\nIt’s easier to understand if you think about the program while thinking about this",
-    "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conclusion</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree—An open-source platform for laboratory, online, and field experiments. Journal of Behavioral and Experimental Finance, 9, 88-97.\nFischbacher, U. (2007). z-Tree: Zurich toolbox for ready-made economic experiments. Experimental Economics, 10, 171-178.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
     "objectID": "chapter_10.html#example-of-a-survey",
     "href": "chapter_10.html#example-of-a-survey",
     "title": "10  Questionnaire survey with oTree",
@@ -300,43 +300,13 @@
     ]
   },
   {
-    "objectID": "chapter_1.html#install-python",
-    "href": "chapter_1.html#install-python",
-    "title": "1  Installation and environments",
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
     "section": "",
-    "text": "Before installing oTree, it is required to have Python installed in your environment to run oTree.\nOpen the python website and install Python3 for your OS from this Python website.\nChoose the most recent version of Python",
+    "text": "Chen, D. L., Schonger, M., & Wickens, C. (2016). oTree—An open-source platform for laboratory, online, and field experiments. Journal of Behavioral and Experimental Finance, 9, 88-97.\nFischbacher, U. (2007). z-Tree: Zurich toolbox for ready-made economic experiments. Experimental Economics, 10, 171-178.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and environments</span>"
-    ]
-  },
-  {
-    "objectID": "chapter_10.html#outline-of-the-experimental-program-to-be-created",
-    "href": "chapter_10.html#outline-of-the-experimental-program-to-be-created",
-    "title": "10  Questionnaire survey with oTree",
-    "section": "",
-    "text": "Questionnaire (single player)\n\nQuestion item\n\nGender (radio button)\nAge (optional)\nPrefecture of residence (optional)\nDevice used for answering (select)",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Questionnaire survey with oTree</span>"
-    ]
-  },
-  {
-    "objectID": "chapter_2.html#app",
-    "href": "chapter_2.html#app",
-    "title": "2  Structure of an oTree project",
-    "section": "",
-    "text": "One app can be an experiment or a part of experiment. A project is collection of all different types of App.\nIf your experiment consist of a prisoner’s dilemma game and a survey, then you need to create two apps, one app for prisoners dilemma and another app is for survey.\nLater you can combine these two apps and run one session.\nApp is like one experiment and project is like a container of different experiments.\nHow you structure the projects is up to you. You can choose the sequence.\nNow if you see the structure of the examples, you can see that there are various different types of folder.\nThe following two folders are known as global settings as they are same level of the project\n\n\n_Static\n\n\nImages, sounds, videos\n\n\n_Template\n\n\nDesign how web page look like. If you want a specific style of your webpage, you can include a template\n\n\nsettings.py\n\n\nIt is also global option. From this setting file, you can change various global options, for instance Your currency, language, interface\nIn this setting.py file you will find the session_configs where you can setup the sequence of apps for your project.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Structure of an oTree project</span>"
-    ]
-  },
-  {
-    "objectID": "chapter_12.html#otree-organizing-idea",
-    "href": "chapter_12.html#otree-organizing-idea",
-    "title": "12  Conclusion",
-    "section": "",
-    "text": "how many players?\nWhat are the variables that affect everyone?\nWhat variables are determined by individual players?\nHow many pages to create?\nWhat kind of page transition is performed?",
-    "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conclusion</span>"
+      "References"
     ]
   }
 ]
